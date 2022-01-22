@@ -49,8 +49,8 @@ fun main(){
 //    computeCosine ()                              // not working properly
 
                         //LIBRARY FUNCTION
-//    calculateCompoundInterest()     /                                                                 /   done but didnt understand at all
-//    computeArea()
+//    calculateCompoundInterest()
+//    computeAreaOfTriangle()
 //    showCharacters()
 //    findRandomNumber()
 //    MakeUppercase()
@@ -68,23 +68,21 @@ fun main(){
 //    findSumAndAverageArray()
 //    swapFirstAndLastElement()
 //    reverseArray()
-//    findLargestAndSmallestArray()                                                                     // explain it to me
+//    findLargestAndSmallestArray()
 //    arrayOptions()
     findItem()                                        // not working correctly
 //    findItemBinaryOption()                                                                           //should be learned
-//    doBinarySearch ()
 //    mergingArraysInAscendingOrder()
 //    mergingArraysInDescendingOrder()
 
                                 //STRING
 //    findLength()
 //    findBackwardString()
-//    countNumberInString ()
 //    countNumberInString()                                                                             // explain it to me
 //    concatenateStringToAnother()
 //    compareTwoString ()
 //    findPalindrome ()
-//    findStringWithinString()                          // not finished
+//    findStringWithinString()                                                             // there are some errors
 //    reverseString ()
 //    convertLowercase ()
 //      convertUppercase ()
@@ -95,8 +93,8 @@ fun main(){
 
 
 
-//        forFun()
+        forFun()
 
-//    mixThreedArray()            //not finished
+//    mixThreeArray()            //not finished
 
 }

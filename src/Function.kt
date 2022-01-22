@@ -488,25 +488,25 @@ fun palindromeNumberTree () {
  */
 fun computePowerNumber() {
     println("Enter positive number for x")
-    val numberX = scanner.nextDouble()
+    val x = scanner.nextDouble()
 
     println("Enter positive number that powers")
-    val power = scanner.nextDouble()
-
+    val n = scanner.nextDouble()
+    var number = 1
+    var temp = true
                                                              /**  sin x = x - x3/3! + x5/5! - x7/7! + x9/9!
                                                                 Enter the value of x : 1
                                                                 Enter the value of n : 10
                                                                 sin 1 = 0.841471
                                                               */
+    while (temp) {
+        if (n >= number) {
 
-    val calcOne = numberX.pow(3)/3    //should be added !
-    val calcTwo = numberX.pow(5)/5    //should be added !
-    val calcThree = numberX.pow(7)/7  //should be added !
-    val calcFour = numberX.pow(9)/9   //should be added !
+        }
+    }
 
-    val calcAll = numberX - calcOne + calcTwo - calcThree + calcFour
 
-    println(calcAll)
+
 }
 
 /**
@@ -564,7 +564,7 @@ fun calculateCompoundInterest() {
 Area = sqrt(s*(s-a)*(s-b)*(s-c))
 where s=(a+b+c)/2
  */
-fun computeArea() {
+fun computeAreaOfTriangle() {
     println("Enter 3 sides")
     val sideA = scanner.nextDouble()
     val sideB = scanner.nextDouble()
@@ -618,19 +618,23 @@ fun MakeUppercase() {
  * Write a program which accept a letter and display it in uppercase letter
  */
 fun randomLotto() {
-    println("Enter 5 number")
-    val number1 = scanner.nextInt()
-    val number2 = scanner.nextInt()
-    val number3 = scanner.nextInt()
-    val number4 = scanner.nextInt()
-    val number5 = scanner.nextInt()
+    println("Enter 5 number between 1 and 36")
+    val size = 5
+    val user = IntArray(size)
+    for (index in 0..4) {
+        val inputNumbers =  scanner.nextInt()
+        user[index] = inputNumbers
+    }
+    println("Your numbers are: ")
+    for (index in 0..4) {
+        print("${user[index]}\t")
+    }
+    println()
+    println("Winning numbers are: ")
+    for (index in 0..4) {
+        print("${(1..36).random()}\t")
+    }
 
-    val random1 = (1..36).random()
-    val random2 = (1..36).random()
-    val random3 = (1..36).random()
-    val random4 = (1..36).random()
-    val random5 = (1..36).random()
-    println("$random1, $random2, $random3, $random4, $random5 are selected randomly")
 }
 
 
@@ -778,28 +782,24 @@ fun calculation() {
  * Write a C++ program to find the sum and average of one dimensional integer array
  */
 fun findSumAndAverageArray() {
-    println("Enter any 5 numbers")
+    println("Enter size of array")
 
-    println("Enter first number: ")
-    val first = scanner.nextInt()
+    val sizeOfArray =  scanner.nextInt()
+    val userArray = IntArray(sizeOfArray)
 
-    println("Enter second number: ")
-    val second = scanner.nextInt()
+    var sum = 0
+    println("Enter numbers")
+    for (index in 0 until userArray.size){
+        val inputNumbers =  scanner.nextInt()
+        userArray[index] = inputNumbers
+    }
 
-    println("Enter third number: ")
-    val third = scanner.nextInt()
-
-    println("Enter fourth number: ")
-    val fourth = scanner.nextInt()
-
-    println("Enter fifth number: ")
-    val fifth = scanner.nextInt()
-
-    val sumOfNumbers = arrayOf(first, second, third, fourth, fifth)
-    val sum = sumOfNumbers.sum()
+    for (index in userArray) {
+        sum += index
+    }
     println("The sum of numbers is $sum")
 
-    val divide = sum / sumOfNumbers.size
+    val divide = sum / userArray.size
     println("Average of array is $divide")
 }
 
@@ -809,20 +809,26 @@ fun findSumAndAverageArray() {
  * Write a C++ program to swap first and last element of an integer 1-d array
  */
 fun swapFirstAndLastElement() {
-    println("Enter 5 elements you want")
-    val one = scanner.nextInt()
-    val two = scanner.nextInt()
-    val three = scanner.nextInt()
-    val four = scanner.nextInt()
-    val five = scanner.nextInt()
+    println("Enter size of array")
 
-    println("Now your first element and last element is swapped")
-    val array = intArrayOf(one, two, three, four, five)
+    val sizeOfArray =  scanner.nextInt()
+    val userArray = IntArray(sizeOfArray)
 
-    println(
-        "Your first element is ${array.last()} (but it was $one)\n" +
-                "Your last element is ${array[0]} (but it was $five)"
-    )
+    println("Enter numbers")
+    for (index in 0 until userArray.size){
+        val inputNumber =  scanner.nextInt()
+        userArray[index] = inputNumber
+    }
+    println("Numbers which you entered are: ")
+    for (index in 0 until userArray.size) {
+        print("${userArray[index]}\t")
+    }
+    println()
+    println("After swapping first and last:")
+    print("${userArray.last()}\t")
+    for (index in 1 until userArray.size-1) {
+        print("${userArray[index]}\t")    }
+    print(userArray.first())
 }
 
 
@@ -831,16 +837,25 @@ fun swapFirstAndLastElement() {
  * Write a C++ program to reverse the element of an integer 1-D array
  */
 fun reverseArray() {
-    println("Enter 5 numbers you want")
-    val one = scanner.nextInt()
-    val two = scanner.nextInt()
-    val three = scanner.nextInt()
-    val four = scanner.nextInt()
-    val five = scanner.nextInt()
+    println("Enter array size")
 
-    val array = intArrayOf(one, two, three, four, five)
-    array.reverse()
-    println(array.contentToString())
+    val sizeOfArray =  scanner.nextInt()
+    val userArray = IntArray(sizeOfArray)
+
+    println("Enter your numbers")
+    for (index in 0 until userArray.size){
+        val inputNumber =  scanner.nextInt()
+        userArray[index] = inputNumber
+    }
+    println("Your numbers are: ")
+    for (index in 0 until userArray.size) {
+        print("${userArray[index]}\t")
+    }
+    println()
+    println("After reversing these numbers: ")
+    for (index in userArray.lastIndex downTo 0) {
+        print("${userArray[index]}\t")
+    }
 }
 
 
@@ -849,27 +864,29 @@ fun reverseArray() {
  * Write a C++ program to find the largest and smallest element of an array
  */
 fun findLargestAndSmallestArray() {
-    println("Enter 5 numbers")
-    val one = scanner.nextDouble()
-    val two = scanner.nextDouble()
-    val three = scanner.nextDouble()
-    val four = scanner.nextDouble()
-    val five = scanner.nextDouble()
+    println("Enter your size of array:")
+    val  sizeOfArray =  scanner.nextInt()
+    val userArray = IntArray(sizeOfArray)
 
-    val numbers = doubleArrayOf(one, two, three, four, five)
-    var largest = numbers[0]
-    for (i in numbers) {
+    println("Enter numbers you want:")
+    for (index in 0 until userArray.size) {
+        val inputYourNumbers = scanner.nextInt()
+        userArray[index] = inputYourNumbers
+    }
+
+    var largest = userArray[0]
+    for (i in userArray) {
         if (largest < i)
             largest = i
     }
-    println("Largest number is = %.2f".format(largest))                             //%.2f.format     what is that
+    println("Largest number is $largest")
 
-    var smallest = numbers[0]
-    for (number in numbers) {
+    var smallest = userArray[0]
+    for (number in userArray) {
         if (smallest > number)
             smallest = number
     }
-    println("Smallest number is = %.2f".format(smallest))                           //%.2f.format   what is that
+    println("Smallest number is $smallest")
 }
 
 
@@ -1125,7 +1142,7 @@ fun mergingArraysInDescendingOrder() {
         println("Enter second string")
         val secondString = scanner.nextLine()
 
-        println("After adding it is $firstString$secondString")
+        println("After adding it is $firstString $secondString")
     }
 
 
@@ -1174,21 +1191,23 @@ fun mergingArraysInDescendingOrder() {
      *  If found display its starting position
      */
     fun findStringWithinString() {
-        println("Enter first string")
-        val firstString = scanner.nextLine()
+        println("Write your word")
+        val string = scanner.nextLine()
 
-        println("Enter second string")
-        val secondString = scanner.nextLine()
+        println("Write your another word")
+        val subString = scanner.nextLine()
 
-        val contain = firstString.contains(secondString)
+        val lengthOne = string.length
+        val lengthTwo = subString.length
 
+        val lengthThree = lengthOne - lengthTwo
 
-        if (contain) {
-            println("Substring is found at ")
+        val contain = string.contains(subString)
+        if (string.contains(subString)) {
+            println("Substring is found at ${lengthThree+1}")
         } else {
             println("Substring is not found")
         }
-
     }
 
 
@@ -1236,7 +1255,7 @@ fun mergingArraysInDescendingOrder() {
 
 
 
-fun mixThreedArray() {
+fun mixThreeArray() {
     println("Enter size of array:")
     val sizeOfArray  = scanner.nextInt()
     val userArray = IntArray(sizeOfArray)

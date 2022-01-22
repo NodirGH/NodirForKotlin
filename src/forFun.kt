@@ -1,0 +1,4 @@
+fun forFun (){
+
+    println()
+}
