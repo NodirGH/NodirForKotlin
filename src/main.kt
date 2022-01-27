@@ -1,7 +1,7 @@
 
 fun main(){
  // hiWorld()
- //                   singlePrint()
+ //                     singlePrint()
  // sum()
 //  temperature()
 
@@ -45,7 +45,7 @@ fun main(){
 //    numberTree ()
 //    palindromeNumberTree ()
 
-//    computePowerNumber()                          //    not working properly
+//    computeSinX()                          //    not working properly
 //    computeCosine ()                              // not working properly
 
                         //LIBRARY FUNCTION
@@ -70,7 +70,7 @@ fun main(){
 //    reverseArray()
 //    findLargestAndSmallestArray()
 //    arrayOptions()
-    findItem()                                        // not working correctly
+//    findItem()
 //    findItemBinaryOption()                                                                           //should be learned
 //    mergingArraysInAscendingOrder()
 //    mergingArraysInDescendingOrder()
@@ -78,23 +78,27 @@ fun main(){
                                 //STRING
 //    findLength()
 //    findBackwardString()
-//    countNumberInString()                                                                             // explain it to me
+//    countNumberInString()
 //    concatenateStringToAnother()
 //    compareTwoString ()
 //    findPalindrome ()
-//    findStringWithinString()                                                             // there are some errors
+//    findStringWithinString()
 //    reverseString ()
 //    convertLowercase ()
 //      convertUppercase ()
 
                             //ARRAY - TWO DIMENSION
 //    findSizeOfMatrix ()
+//    calculateDiagonalSum()
+//    multiplyRowToColumn ()                                                   //should be checked
+//    showUpperHalf ()                                  //not finished
+//    calculateMiddleSumAndDisplay ()
+    addTwoMatrices ()                                                                     //should be learned
+//      multiplyTwoMatrices ()                                                                //should be learned
 
 
 
 
-        forFun()
-
-//    mixThreeArray()            //not finished
+//        forFun()
 
 }

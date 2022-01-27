@@ -390,10 +390,10 @@ fun makeLoop1To5() {
 Set 3 Task 1
 Write a program to print following
 iii)
-     *
-    **
-   ***
-  ****
+ *
+ **
+ ***
+ ****
  *****
  */
 fun loop1To5() {
@@ -413,18 +413,18 @@ fun loop1To5() {
 Set 3 Task 1
 Write a program to print following
 iv)
-     *
-    ***
-   *****
-  *******
+ *
+ ***
+ *****
+ *******
  *********
  */
 fun christmasTree() {
     for (i in 1..5) {
-        for(j in 5 downTo i) {
+        for (j in 5 downTo i) {
             print(" ")
         }
-        for(k in 0 until (i*2-1)){
+        for (k in 0 until (i * 2 - 1)) {
             print("*")
         }
         println()
@@ -435,18 +435,18 @@ fun christmasTree() {
 /**
 v)
 
-        1
-       222
-      33333
-     4444444
-    555555555
-*/
-fun numberTree () {
+1
+222
+33333
+4444444
+555555555
+ */
+fun numberTree() {
     for (generalRows in 1..5) {
         for (space in 5 downTo generalRows) {
             print(" ")
         }
-        for (eachRows in 0 until (generalRows*2-1)) {
+        for (eachRows in 0 until (generalRows * 2 - 1)) {
             print(generalRows)
         }
         println()
@@ -456,21 +456,21 @@ fun numberTree () {
 /**
 vi)
 
-        1
-       212
-      32123
-     4321234
-    543212345
+1
+212
+32123
+4321234
+543212345
  */
-fun palindromeNumberTree () {
-    for (generalRows in 1 .. 5) {
+fun palindromeNumberTree() {
+    for (generalRows in 1..5) {
         for (space in 5 downTo generalRows) {
             print(" ")
         }
         for (eachRows in generalRows downTo 1) {
             print(eachRows)
         }
-        for (eachRowsTwo in 2.. generalRows) {
+        for (eachRowsTwo in 2..generalRows) {
             print(eachRowsTwo)
         }
 
@@ -485,25 +485,27 @@ fun palindromeNumberTree () {
  * and a positive integer n. We compute the sine of x using the series and
  * the computation should use all terms in the
  * series up through the term involving xn
+ * sin x = x - x3/3! + x5/5! - x7/7! + x9/9!
+Enter the value of x : 1
+Enter the value of n : 10
+sin 1 = 0.841471
  */
-fun computePowerNumber() {
+fun computeSinX() {
     println("Enter positive number for x")
-    val x = scanner.nextDouble()
+    val x = scanner.nextInt()
 
     println("Enter positive number that powers")
-    val n = scanner.nextDouble()
-    var number = 1
-    var temp = true
-                                                             /**  sin x = x - x3/3! + x5/5! - x7/7! + x9/9!
-                                                                Enter the value of x : 1
-                                                                Enter the value of n : 10
-                                                                sin 1 = 0.841471
-                                                              */
-    while (temp) {
-        if (n >= number) {
+    val n = scanner.nextInt()
+    var number = 0
+    var condition = true
 
+    for (index in 0 until n){
+        if (index % 2 == 0) {
+            number += index
         }
     }
+        val result =3 % 2
+    println(result)
 
 
 
@@ -519,26 +521,21 @@ Enter the value of x : 1
 Enter the value of n : 5
 cos 1 = 0.541667
  */
-fun computeCosine () {
+fun computeCosine() {
     println("Enter positive number for x")
     val numberX = scanner.nextDouble()
 
     println("Enter positive number that powers")
     val power = scanner.nextDouble()
 
-    val calcOne = numberX.pow(2)/2    //should be added !
-    val calcTwo = numberX.pow(4)/4    //should be added !
-    val calcThree = numberX.pow(6)/6  //should be added !
+    val calcOne = numberX.pow(2) / 2    //should be added !
+    val calcTwo = numberX.pow(4) / 4    //should be added !
+    val calcThree = numberX.pow(6) / 6  //should be added !
 
     val calcAll = 1 - calcOne + calcTwo - calcThree
 
     println(calcAll)
 }
-
-
-
-
-
 
 
 /** Library function
@@ -622,7 +619,7 @@ fun randomLotto() {
     val size = 5
     val user = IntArray(size)
     for (index in 0..4) {
-        val inputNumbers =  scanner.nextInt()
+        val inputNumbers = scanner.nextInt()
         user[index] = inputNumbers
     }
     println("Your numbers are: ")
@@ -784,13 +781,13 @@ fun calculation() {
 fun findSumAndAverageArray() {
     println("Enter size of array")
 
-    val sizeOfArray =  scanner.nextInt()
+    val sizeOfArray = scanner.nextInt()
     val userArray = IntArray(sizeOfArray)
 
     var sum = 0
     println("Enter numbers")
-    for (index in 0 until userArray.size){
-        val inputNumbers =  scanner.nextInt()
+    for (index in 0 until userArray.size) {
+        val inputNumbers = scanner.nextInt()
         userArray[index] = inputNumbers
     }
 
@@ -811,12 +808,12 @@ fun findSumAndAverageArray() {
 fun swapFirstAndLastElement() {
     println("Enter size of array")
 
-    val sizeOfArray =  scanner.nextInt()
+    val sizeOfArray = scanner.nextInt()
     val userArray = IntArray(sizeOfArray)
 
     println("Enter numbers")
-    for (index in 0 until userArray.size){
-        val inputNumber =  scanner.nextInt()
+    for (index in 0 until userArray.size) {
+        val inputNumber = scanner.nextInt()
         userArray[index] = inputNumber
     }
     println("Numbers which you entered are: ")
@@ -826,8 +823,9 @@ fun swapFirstAndLastElement() {
     println()
     println("After swapping first and last:")
     print("${userArray.last()}\t")
-    for (index in 1 until userArray.size-1) {
-        print("${userArray[index]}\t")    }
+    for (index in 1 until userArray.size - 1) {
+        print("${userArray[index]}\t")
+    }
     print(userArray.first())
 }
 
@@ -839,12 +837,12 @@ fun swapFirstAndLastElement() {
 fun reverseArray() {
     println("Enter array size")
 
-    val sizeOfArray =  scanner.nextInt()
+    val sizeOfArray = scanner.nextInt()
     val userArray = IntArray(sizeOfArray)
 
     println("Enter your numbers")
-    for (index in 0 until userArray.size){
-        val inputNumber =  scanner.nextInt()
+    for (index in 0 until userArray.size) {
+        val inputNumber = scanner.nextInt()
         userArray[index] = inputNumber
     }
     println("Your numbers are: ")
@@ -865,7 +863,7 @@ fun reverseArray() {
  */
 fun findLargestAndSmallestArray() {
     println("Enter your size of array:")
-    val  sizeOfArray =  scanner.nextInt()
+    val sizeOfArray = scanner.nextInt()
     val userArray = IntArray(sizeOfArray)
 
     println("Enter numbers you want:")
@@ -890,7 +888,6 @@ fun findLargestAndSmallestArray() {
 }
 
 
-
 /** Array - Single Dimension
  * set 1 task 6
  * P is one-dimensional array of integers. Write a C++ function to
@@ -912,18 +909,20 @@ fun findItem() {
 
     println("Enter number which you want to find:")
     val usersChoice = scanner.nextInt()
-for (search in 0 until userArray.size) {
-    when (usersChoice) {
-        userArray[search] -> println("Number is found")
-        else -> println("Number isn't found")
-    }
+    var isFound = false
 
+    for (search in 0 until userArray.size)
+        if (usersChoice == userArray[search]) {
+            isFound = true
+            break
+        }
+
+
+    if (isFound)
+        println("Number is found")
+    else
+        println("Number isn't found")
 }
-
-
-
-}
-
 
 
 /** Array - Single Dimension
@@ -938,7 +937,6 @@ for (search in 0 until userArray.size) {
  */
 
 
-
 fun findItemBinaryOption() {
     println("Enter numbers with space bar")
     val inputNumbers = readLine()!!.split(' ').map(String::toInt)
@@ -948,14 +946,14 @@ fun findItemBinaryOption() {
     val searchingNumber = readLine()!!.toInt()
 
     var low = 0
-    var high = sortingNumbers.size-1
+    var high = sortingNumbers.size - 1
 
     var stepCount = 0
     var isNumberFound = false
 
     while (low <= high) {
         val mid = (low + high) / 2
-        val guess  = sortingNumbers[mid]
+        val guess = sortingNumbers[mid]
 
         stepCount++
 
@@ -965,7 +963,7 @@ fun findItemBinaryOption() {
                 isNumberFound = true
             }
             guess > searchingNumber -> high = mid - 1
-            else -> low =  mid + 1
+            else -> low = mid + 1
         }
         if (isNumberFound) break                // ATTENTION!!!   why  do we need this line?
     }
@@ -973,7 +971,6 @@ fun findItemBinaryOption() {
         println("Your number isn't found")
     }
 }
-
 
 
 /** Array - Single Dimension
@@ -1005,11 +1002,11 @@ fun mergingArraysInAscendingOrder() {
     println("Merged array in ascending order is:")
     val mergingArray = userArray.plus(userSecondArray)
 
-    for(index in 1 until mergingArray.size){
-        if(mergingArray[index] < mergingArray[index-1]){
+    for (index in 1 until mergingArray.size) {
+        if (mergingArray[index] < mergingArray[index - 1]) {
             var comingIndex = index
-            for(innerIndex in index downTo 0){
-                if(mergingArray[comingIndex] < mergingArray[innerIndex]){
+            for (innerIndex in index downTo 0) {
+                if (mergingArray[comingIndex] < mergingArray[innerIndex]) {
                     val temp = mergingArray[comingIndex]
                     mergingArray[comingIndex] = mergingArray[innerIndex]
                     mergingArray[innerIndex] = temp
@@ -1055,11 +1052,11 @@ fun mergingArraysInDescendingOrder() {
     println("Merged array in descending order is:")
     val mergingArray = userArray.plus(userSecondArray)
 
-    for(index in 1 until mergingArray.size){
-        if(mergingArray[index] > mergingArray[index-1]){
+    for (index in 1 until mergingArray.size) {
+        if (mergingArray[index] > mergingArray[index - 1]) {
             var comingIndex = index
-            for(innerIndex in index downTo 0){
-                if(mergingArray[comingIndex] > mergingArray[innerIndex]){
+            for (innerIndex in index downTo 0) {
+                if (mergingArray[comingIndex] > mergingArray[innerIndex]) {
                     val temp = mergingArray[comingIndex]
                     mergingArray[comingIndex] = mergingArray[innerIndex]
                     mergingArray[innerIndex] = temp
@@ -1070,249 +1067,184 @@ fun mergingArraysInDescendingOrder() {
     }
 
 
-    for (index in 0 until mergingArray.size){
+    for (index in 0 until mergingArray.size) {
         print("${mergingArray[index]}\t")
     }
 }
 
 
-
-
-
-
-    /** String
-     *  set 1 task 1
-     *  Write a program to find the length of string
-     */
-
-    fun findLength() {
-        println("Enter string")
-        val name = scanner.next()
-        println("The length of string is ${name.length} ")
-    }
-
-
-    /** String
-     *  set 1 task 2
-     *  Write a program to display string from backward
-     */
-
-    fun findBackwardString() {
-        println("Write your words")
-
-        val string = scanner.nextLine()
-        val backward = string.reversed()
-
-        println(backward)
-    }
-
-
-    /** String
-     *  set 1 task 3
-     *  Write a program to count number of words in string
-     */
-
-    fun countNumberInString() {
-        println("Write your words")
-
-        val string = scanner.nextLine()
-        var count = 0
-
-        val stringArray = string.split(" ".toRegex()).toTypedArray()
-
-        for (a in stringArray) {
-            if (a != "") {
-                count++
-            }
-        }
-
-        println("The number of words are $count")
-    }
-
-
-    /** String
-     *  set 1 task 4
-     *  Write a program to concatenate one string contents to another
-     */
-
-    fun concatenateStringToAnother() {
-        println("Enter first string")
-        val firstString = scanner.nextLine()
-
-        println("Enter second string")
-        val secondString = scanner.nextLine()
-
-        println("After adding it is $firstString $secondString")
-    }
-
-
-    /** String
-     *  set 1 task 5
-     *  Write a program to compare two strings they are exact equal or not
-     */
-
-    fun compareTwoString() {
-        println("Enter first string")
-        val firstString = scanner.nextLine()
-
-        println("Enter second string")
-        val secondString = scanner.nextLine()
-
-        if (firstString == secondString) {
-            println("They are equal")
-        } else {
-            println("They are not equal")
-        }
-    }
-
-
-    /** String
-     *  set 1 task 6
-     *  Write a program to check a string is palindrome or not
-     */
-    fun findPalindrome() {
-        println("Enter your word")
-        val word = scanner.nextLine()
-
-        val lowCase = word.toLowerCase()
-        val reverse = word.reversed()
-
-        if (lowCase == reverse) {
-            println("$word is palindrome word")
-        } else {
-            println("$word is not palindrome")
-        }
-    }
-
-
-    /** String
-     *  set 1 task 7
-     *  Write a program to find a substring within a string.
-     *  If found display its starting position
-     */
-    fun findStringWithinString() {
-        println("Write your word")
-        val string = scanner.nextLine()
-
-        println("Write your another word")
-        val subString = scanner.nextLine()
-
-        val lengthOne = string.length
-        val lengthTwo = subString.length
-
-        val lengthThree = lengthOne - lengthTwo
-
-        val contain = string.contains(subString)
-        if (string.contains(subString)) {
-            println("Substring is found at ${lengthThree+1}")
-        } else {
-            println("Substring is not found")
-        }
-    }
-
-
-    /** String
-     *  set 1 task 8
-     *  Write a program to reverse a string
-     */
-    fun reverseString() {
-        println("Write your word")
-
-        val string = scanner.nextLine()
-        val reverse = string.reversed()
-
-        println(reverse)
-    }
-
-
-    /** String
-     *  set 1 task 9
-     *  Write a program to convert a string in lowercase
-     */
-    fun convertLowercase() {
-        println("Write your word")
-
-        val string = scanner.nextLine()
-        val lowercase = string.toLowerCase()
-
-        println(lowercase)
-    }
-
-
-    /** String
-     *  set 1 task 10
-     *  Write a program to convert a string in lowercase
-     */
-    fun convertUppercase() {
-        println("Write your word")
-
-        val string = scanner.nextLine()
-        val uppercase = string.toUpperCase()
-
-        println(uppercase)
-    }
-
-
-
-
-fun mixThreeArray() {
-    println("Enter size of array:")
-    val sizeOfArray  = scanner.nextInt()
-    val userArray = IntArray(sizeOfArray)
-
-
-
-    println("Enter numbers of A array:")
-    for (index in 0 until userArray.size){
-        val inputNumbers = scanner.nextInt()
-        userArray[index] = inputNumbers
-    }
-    for (index in 0 until userArray.size) {
-        if (userArray[index] % 2 == 0) {
-
-            val evenLeftToRight = userArray[index]
-            print("$evenLeftToRight\t")
-        }
-    }
-
-
-    for (index in 0 until userArray.size) {
-        if (userArray[index] % 2 != 0) {
-         val oddRightToLeft = userArray[index]
-        print("$oddRightToLeft\t")
-        }
-
-    }
-
-    println("\nEnter size of second array:")
-    val sizeOfSecondArray  = scanner.nextInt()
-    val secondUserArray = IntArray(sizeOfSecondArray)
-
-    println("Enter numbers of B array:")
-    for (index in 0 until secondUserArray.size){
-        val inputNumbers = scanner.nextInt()
-        secondUserArray[index] = inputNumbers
-    }
-
-    for (index in 0 until secondUserArray.size) {
-        if (secondUserArray[index] % 2 == 0) {
-            val secondEvenLeftToRight = secondUserArray[index]
-            print("$secondEvenLeftToRight\t")
-        }
-    }
-
-
-    for (index in 0 until secondUserArray.size) {
-        if (secondUserArray[index] % 2 != 0) {
-            val secondOddRightToLeft = secondUserArray[index]
-            print("$secondOddRightToLeft\t")
-        }
-
-    }
-
-    val thirdMergedArray = userArray.plus(secondUserArray)
-    println("Merged array is : $thirdMergedArray")
-
+/** String
+ *  set 1 task 1
+ *  Write a program to find the length of string
+ */
+
+fun findLength() {
+    println("Enter string")
+    val name = scanner.next()
+    println("The length of string is ${name.length} ")
 }
 
+
+/** String
+ *  set 1 task 2
+ *  Write a program to display string from backward
+ */
+
+fun findBackwardString() {
+    println("Write your words")
+
+    val string = scanner.nextLine()
+    val backward = string.reversed()
+
+    println(backward)
+}
+
+
+/** String
+ *  set 1 task 3
+ *  Write a program to count number of words in string
+ */
+
+fun countNumberInString() {
+    println("Write your words")
+
+    val string = scanner.nextLine()
+    var count = 0
+
+    val stringArray = string.split(" ")
+
+    for (a in stringArray) {
+        if (a != "") {
+            count++
+        }
+    }
+
+    println("The number of words are $count")
+}
+
+
+/** String
+ *  set 1 task 4
+ *  Write a program to concatenate one string contents to another
+ */
+
+fun concatenateStringToAnother() {
+    println("Enter first string")
+    val firstString = scanner.nextLine()
+
+    println("Enter second string")
+    val secondString = scanner.nextLine()
+
+    println("After adding it is $firstString $secondString")
+}
+
+
+/** String
+ *  set 1 task 5
+ *  Write a program to compare two strings they are exact equal or not
+ */
+
+fun compareTwoString() {
+    println("Enter first string")
+    val firstString = scanner.nextLine()
+
+    println("Enter second string")
+    val secondString = scanner.nextLine()
+
+    if (firstString == secondString) {
+        println("They are equal")
+    } else {
+        println("They are not equal")
+    }
+}
+
+
+/** String
+ *  set 1 task 6
+ *  Write a program to check a string is palindrome or not
+ */
+fun findPalindrome() {
+    println("Enter your word")
+    val word = scanner.nextLine()
+
+    val lowCase = word.toLowerCase()
+    val reverse = word.reversed()
+
+    if (lowCase == reverse) {
+        println("$word is palindrome word")
+    } else {
+        println("$word is not palindrome")
+    }
+}
+
+
+/** String
+ *  set 1 task 7
+ *  Write a program to find a substring within a string.
+ *  If found display its starting position
+ */
+fun findStringWithinString() {
+    println("Write your word")
+    val word = scanner.nextLine()
+
+    println("Write your another word")
+    val subString = scanner.nextLine()
+
+    val lengthOne = word.length
+    val lengthTwo = subString.length
+
+    val lengthThree = lengthOne - lengthTwo
+
+    val contain = word.contains(subString)
+
+    if (word.contains(subString)) {
+        val firstPart = word.split(subString)[0]
+        println("Substring is found at ${firstPart.length + 1}")
+        println("Substring is end at ${subString.length + firstPart.length}")
+    } else {
+        println("Substring is not found")
+    }
+}
+
+
+/** String
+ *  set 1 task 8
+ *  Write a program to reverse a string
+ */
+fun reverseString() {
+    println("Write your word")
+
+    val string = scanner.nextLine()
+    val reverse = string.reversed()
+
+    println(reverse)
+}
+
+
+/** String
+ *  set 1 task 9
+ *  Write a program to convert a string in lowercase
+ */
+fun convertLowercase() {
+    println("Write your word")
+
+    val string = scanner.nextLine()
+    val lowercase = string.toLowerCase()
+
+    println(lowercase)
+}
+
+
+/** String
+ *  set 1 task 10
+ *  Write a program to convert a string in lowercase
+ */
+fun convertUppercase() {
+    println("Write your word")
+
+    val string = scanner.nextLine()
+    val uppercase = string.toUpperCase()
+
+    println(uppercase)
+}
 
