@@ -12,14 +12,14 @@ To display row-wise sum of matrix of size m x n
 To display column-wise sum of matrix of size m x n
 To create transpose of matrix B of size n x m
  */
-fun findSizeOfMatrix () {
+fun matrixMenu() {
     println("Enter the number of ROWS")
     val rows = scanner.nextInt()
 
     println("Enter the number of COLUMNS")
     val columns = scanner.nextInt()
 
-    val twoD = Array(rows) {IntArray(columns)}
+    val twoD = Array(rows) { IntArray(columns) }
     println("Table is filled automatically")
 
     for (row in 0 until twoD.size) {
@@ -33,8 +33,8 @@ fun findSizeOfMatrix () {
     }
 
 
-    for (rowNumbers in twoD){
-        for (columnNumbers in rowNumbers){
+    for (rowNumbers in twoD) {
+        for (columnNumbers in rowNumbers) {
             print(columnNumbers)
             print(" ")
         }
@@ -44,12 +44,6 @@ fun findSizeOfMatrix () {
 }
 
 
-
-
-
-
-
-
 /** Array - Two Dimension
  * set 1 Task 2
 Write user defined functions for square matrix to calculate
@@ -57,7 +51,7 @@ Write user defined functions for square matrix to calculate
 Left diagonal sum
 Right diagonal sum
  */
-fun calculateDiagonalSum () {
+fun calculateDiagonalSum() {
     println("Enter size of matrix")
     val sizeOfMatrix = readLine()!!.toInt()
     println("Size is ${sizeOfMatrix}x${sizeOfMatrix}")
@@ -65,7 +59,7 @@ fun calculateDiagonalSum () {
     println("Fields are filled automatically")
     val row = sizeOfMatrix
     val column = sizeOfMatrix
-    val userTwoArray = Array(row) {IntArray(column)}
+    val userTwoArray = Array(row) { IntArray(column) }
 
     for (rows in 0 until userTwoArray.size) {
         val arrayColumn = IntArray(column)
@@ -77,8 +71,8 @@ fun calculateDiagonalSum () {
         userTwoArray[rows] = arrayColumn
     }
 
-    for (rowNumbers in userTwoArray){
-        for (columnNumbers in rowNumbers){
+    for (rowNumbers in userTwoArray) {
+        for (columnNumbers in rowNumbers) {
             print(columnNumbers)
             print(" ")
         }
@@ -93,13 +87,12 @@ fun calculateDiagonalSum () {
     println("Sum of left diagonal is $sumLeft")
 
 
-
     var sumRight = 0
 
-    for (rowIndex in 0 until userTwoArray.size){
-        val lastPosition = userTwoArray[rowIndex].size-1
-        for (columnIndex in lastPosition downTo 0){
-            if (userTwoArray[rowIndex].size-1-columnIndex == rowIndex)
+    for (rowIndex in 0 until userTwoArray.size) {
+        val lastPosition = userTwoArray[rowIndex].size - 1
+        for (columnIndex in lastPosition downTo 0) {
+            if (userTwoArray[rowIndex].size - 1 - columnIndex == rowIndex)
                 sumRight += userTwoArray[rowIndex][columnIndex]
         }
     }
@@ -109,30 +102,19 @@ fun calculateDiagonalSum () {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /** Array - Two Dimension
  * set 1 Task 3
  * Write a user-defined function in C++ to display the multiplication of row element of
  * two-dimensional array A[4][6] containing integer.
  */
-fun multiplyRowToColumn () {
+fun multiplyRowToColumn() {
     println("Enter the number of rows")
     val rows = scanner.nextInt()
 
     println("Enter the number of columns")
     val columns = scanner.nextInt()
 
-    val twoD = Array(rows) {IntArray(columns)}
+    val twoD = Array(rows) { IntArray(columns) }
     println("Table is filled automatically")
 
     for (row in 0 until twoD.size) {
@@ -146,8 +128,8 @@ fun multiplyRowToColumn () {
     }
 
 
-    for (rowNumbers in twoD){
-        for (columnNumbers in rowNumbers){
+    for (rowNumbers in twoD) {
+        for (columnNumbers in rowNumbers) {
             print(columnNumbers)
             print(" ")
         }
@@ -155,20 +137,9 @@ fun multiplyRowToColumn () {
     }
 
     println("The multiplication of rows and columns is: ")
-    val result = rows*columns
+    val result = rows * columns
     println(result)
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /** Array - Two Dimension
@@ -183,66 +154,46 @@ e.g.,
 0 1 5 0 1                                    0 1
 3 4 9 1 5                                      5
  */
-fun showUpperHalf () {
-    //variable of rows and col
+fun showUpperHalf() {
     val rows: Int
     val column: Int
 
-    //Input Stream
     val scanner = Scanner(System.`in`)
 
-    //Input no of rows and column
     print("Enter the number of rows and columns of matrix : ")
-    rows   = scanner.nextInt()
-    column = scanner.nextInt()
+    rows = scanner.nextInt()
+    column = rows
 
-    if(rows!=column) {
+    if (rows != column) {
         println("Matrix should be Square matrix , Rows and Col size must be Same !!")
         return
     }
 
-    //Create Array
-    val matrixA     = Array(rows) { IntArray(column) }
+    val matrixA = Array(rows) { IntArray(column) }
 
-    //Input Matrix
     println("Enter the Elements of First Matrix ($rows X $column} ): ")
-    for(i in matrixA.indices){
-        for(j in matrixA[i].indices){
-            print("matrixA[$i][$j]: ")
-            matrixA[i][j]=scanner.nextInt()
+    for (i in matrixA.indices) {
+        for (j in matrixA[i].indices) {
+            matrixA[i][j] = (1..10).random()
         }
     }
 
-    //print Matrix A
     println("Matrix A : ")
-    for(i in matrixA.indices){
+    for (i in matrixA.indices) {
         println("${matrixA[i].contentToString()} ")
     }
 
-
-    //get Upper Triangular of matrix
-    for(i in matrixA.indices){
-        for(j in matrixA[i].indices){
-            if(j<i) matrixA[i][j]=0
+    for (i in matrixA.indices) {
+        for (j in matrixA[i].indices) {
+            if(i<=j)
+                print(""+ matrixA[i][j]+ " ")
+            else
+                print("  ")
         }
+        println()
     }
 
-    //print Matrix A
-    println("Upper Triangular of Matrix : ")
-    for(i in matrixA.indices){
-        println("${matrixA[i].contentToString()} ")
-    }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /** Array - Two Dimension
@@ -260,7 +211,7 @@ Output through the function should be :
 Middle Row : 7 6 9
 Middle column : 5 6 1
  */
-fun calculateMiddleSumAndDisplay () {
+fun calculateMiddleSumAndDisplay() {
     println("Enter ODD size of matrix")
     val sizeOfOddMatrix = readLine()!!.toInt()
     println("Size is ${sizeOfOddMatrix}x$sizeOfOddMatrix")
@@ -320,23 +271,11 @@ fun calculateMiddleSumAndDisplay () {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /** Array - Two Dimension
  * set 1 Task 6
  *Write a program to add two array A and B of size m x n.
  */
-fun addTwoMatrices () {
+fun addTwoMatrices() {
     val rows: Int
     val column: Int
 
@@ -396,93 +335,81 @@ fun addTwoMatrices () {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /** Array - Two Dimension
  * set 1 Task 7
  *Write a program to multiply array A and B of order NxL and LxM
  */
-fun multiplyTwoMatrices (){
+fun multiplyTwoMatrices() {
     //Input Stream
     val scanner = Scanner(System.`in`)
 
     //Input no of rows and column
     print("Enter the number of rows and columns of First matrix : ")
-    val rows1   = scanner.nextInt()
+    val rows1 = scanner.nextInt()
     val column1 = scanner.nextInt()
 
     //Input no of rows and column
     print("Enter the number of rows and columns of Second matrix : ")
-    val rows2   = scanner.nextInt()
+    val rows2 = scanner.nextInt()
     val column2 = scanner.nextInt()
 
     //No of Col in first Matrix must be Equal to no of rows in second Matrix
-    if(column1 != rows2){
+    if (column1 != rows2) {
         println("Size of Column in first Matrix must be Equal to size of rows in second Matrix !!")
         return
     }
 
     //Create First Matrix Array
-    val matrixA     = Array(rows1) { IntArray(column1) }
+    val matrixA = Array(rows1) { IntArray(column1) }
 
     //Create Second Matrix Array
-    val matrixB     = Array(rows2) { IntArray(column2) }
+    val matrixB = Array(rows2) { IntArray(column2) }
 
     // create Product Matrix Array
-    val productMatrix   = Array(rows1) { IntArray(column2) }
+    val productMatrix = Array(rows1) { IntArray(column2) }
 
 
     //Input Matrix
     println("Enter the  elements of First Matrix ($rows1 X $column1} ): ")
-    for(i in matrixA.indices){
-        for(j in matrixA[i].indices){
+    for (i in matrixA.indices) {
+        for (j in matrixA[i].indices) {
             print("matrixA[$i][$j]: ")
-            matrixA[i][j]=scanner.nextInt()
+            matrixA[i][j] = scanner.nextInt()
         }
     }
 
     //Input Matrix
     println("Enter the Elements of Second Matrix ($rows2 X $column2} ): ")
-    for(i in matrixB.indices){
-        for(j in matrixB[i].indices){
+    for (i in matrixB.indices) {
+        for (j in matrixB[i].indices) {
             print("matrixB[$i][$j]: ")
-            matrixB[i][j]=scanner.nextInt()
+            matrixB[i][j] = scanner.nextInt()
         }
     }
 
     //print Matrix A
     println("Matrix A : ")
-    for(i in matrixA.indices){
+    for (i in matrixA.indices) {
         println("${matrixA[i].contentToString()} ")
     }
 
     //print Matrix B
     println("Matrix B : ")
-    for(i in matrixB.indices){
+    for (i in matrixB.indices) {
         println("${matrixB[i].contentToString()} ")
     }
 
     //Product of Matrices
-    for(i in productMatrix.indices){
-        for(j in productMatrix[i].indices){
-            for(k in matrixB.indices)
-                productMatrix[i][j]=productMatrix[i][j] + (matrixA[i][k] * matrixB[k][j])
+    for (i in productMatrix.indices) {
+        for (j in productMatrix[i].indices) {
+            for (k in matrixB.indices)
+                productMatrix[i][j] = productMatrix[i][j] + (matrixA[i][k] * matrixB[k][j])
         }
     }
 
     //Print Product of Matrices
     println("Product of the Matrices:")
-    for(i in productMatrix.indices){
+    for (i in productMatrix.indices) {
         println("${productMatrix[i].contentToString()} ")
     }
 }

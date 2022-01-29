@@ -74,7 +74,7 @@ fun main(){
 //    findItemBinaryOption()                                                                           //should be learned
 //    mergingArraysInAscendingOrder()
 //    mergingArraysInDescendingOrder()
-
+//    createMixedArrayC ()
                                 //STRING
 //    findLength()
 //    findBackwardString()
@@ -88,17 +88,17 @@ fun main(){
 //      convertUppercase ()
 
                             //ARRAY - TWO DIMENSION
-//    findSizeOfMatrix ()
+//    matrixMenu ()                               //not finished
 //    calculateDiagonalSum()
-//    multiplyRowToColumn ()                                                   //should be checked
-//    showUpperHalf ()                                  //not finished
+//    multiplyRowToColumn ()                                                   //should be corrected
+//    showUpperHalf ()
 //    calculateMiddleSumAndDisplay ()
-    addTwoMatrices ()                                                                     //should be learned
+//    addTwoMatrices ()                                                                     //should be learned
 //      multiplyTwoMatrices ()                                                                //should be learned
 
 
 
 
-//        forFun()
-
+        forFun()
+//        testMain()
 }

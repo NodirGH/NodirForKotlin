@@ -356,17 +356,15 @@ i)
 fun forLoop() {
     for (i in 1..4) {
         for (j in 1..10) {
-            if (j < 11) {
-                print("*")
-            }
-        }
+            print("*")
+                    }
         println()
     }
 }
 
 
 /** Flow of control
-Set 3 Task 1
+Set 3 Task 2
 Write a program to print following
  *
  **
@@ -387,13 +385,13 @@ fun makeLoop1To5() {
 
 
 /** Flow of control
-Set 3 Task 1
+Set 3 Task 3
 Write a program to print following
 iii)
- *
- **
- ***
- ****
+     *
+    **
+   ***
+  ****
  *****
  */
 fun loop1To5() {
@@ -413,10 +411,10 @@ fun loop1To5() {
 Set 3 Task 1
 Write a program to print following
 iv)
- *
- ***
- *****
- *******
+     *
+    ***
+   *****
+  *******
  *********
  */
 fun christmasTree() {
@@ -1069,6 +1067,77 @@ fun mergingArraysInDescendingOrder() {
 
     for (index in 0 until mergingArray.size) {
         print("${mergingArray[index]}\t")
+    }
+}
+
+
+/** Array - Single Dimension
+ * set 1 task 10
+ * Given two arrays of integers A and B of sizes M and N respectively. Write a function named MIX () with four arguments,
+ * which will produce a third array named C. such that the following sequence is followed.
+All even numbers of A from left to right are copied into C from left to right.
+All odd numbers of A from left to right are copied into C from right to left.
+All even numbers of B from left to right are copied into C from left to right.
+All old numbers of B from left to right are copied into C from right to left.
+A, B and C are passed as arguments to MIX (). e.g., A is {3, 2, 1, 7, 6, 3} and B is {9, 3, 5, 6, 2, 8, 10} the resultant
+array C is {2, 6, 6, 2, 8, 10, 5, 3, 9, 3, 7, 1, 3}
+ */
+fun createMixedArrayC () {
+    println("Enter size of the first array")
+    val sizeOfFirstArray = readLine()!!.toInt()
+    val arrayA = IntArray(sizeOfFirstArray)
+
+    println("Enter number for the first array")
+    for (index in 0 until arrayA.size) {
+        val inputFirstArray = readLine()!!.toInt()
+        arrayA[index] = inputFirstArray
+    }
+
+    println("Enter size of second array")
+    val sizeOfSecondArray = readLine()!!.toInt()
+    val arrayB = IntArray(sizeOfSecondArray)
+
+    println("Enter numbers for the second array")
+    for (index in 0 until arrayB.size) {
+        val inputSecondArray = readLine()!!.toInt()
+        arrayB[index] = inputSecondArray
+    }
+
+    println("The numbers which you entered for the first array are: ")
+    for (index in 0 until arrayA.size) {
+        print("${arrayA[index]}\t")
+    }
+    println()
+    println("The numbers which you entered for the second array are: ")
+    for (index in 0 until arrayB.size) {
+        print("${arrayB[index]}\t")
+    }
+
+    println()
+    println("Array C is equal to: ")
+    var actionFirst: Int
+    for (evenLeftToRight in 0 until arrayA.size) {
+        if (arrayA[evenLeftToRight] % 2 == 0) {
+            print("${arrayA[evenLeftToRight]}\t")
+        }
+    }
+
+    for (evenLeftToRight in 0 until arrayB.size) {
+        if (arrayB[evenLeftToRight] % 2 == 0) {
+            print("${arrayB[evenLeftToRight]}\t")
+        }
+    }
+
+    for (oddRightToLeft in arrayB.lastIndex downTo 0){
+        if (arrayB[oddRightToLeft] % 2 == 1) {
+            print("${arrayB[oddRightToLeft]}\t")
+        }
+    }
+
+    for (oddRightToLeft in arrayA.lastIndex downTo 0){
+        if (arrayA[oddRightToLeft] % 2 == 1) {
+            print("${arrayA[oddRightToLeft]}\t")
+        }
     }
 }
 
