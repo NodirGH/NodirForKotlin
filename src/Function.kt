@@ -340,6 +340,8 @@ fun power() {
 
     val a = number.pow(power)
     println(a)
+
+
 }
 
 
@@ -357,7 +359,7 @@ fun forLoop() {
     for (i in 1..4) {
         for (j in 1..10) {
             print("*")
-                    }
+        }
         println()
     }
 }
@@ -388,10 +390,10 @@ fun makeLoop1To5() {
 Set 3 Task 3
 Write a program to print following
 iii)
-     *
-    **
-   ***
-  ****
+ *
+ **
+ ***
+ ****
  *****
  */
 fun loop1To5() {
@@ -411,10 +413,10 @@ fun loop1To5() {
 Set 3 Task 1
 Write a program to print following
 iv)
-     *
-    ***
-   *****
-  *******
+ *
+ ***
+ *****
+ *******
  *********
  */
 fun christmasTree() {
@@ -490,24 +492,31 @@ sin 1 = 0.841471
  */
 fun computeSinX() {
     println("Enter positive number for x")
-    val x = scanner.nextInt()
+    var numberX: Double = readLine()!!.toDouble()
 
-    println("Enter positive number that powers")
-    val n = scanner.nextInt()
-    var number = 0
-    var condition = true
+    println("Enter positive number for exponent")
+    val exponent: Int = readLine()!!.toInt()
+    var number = 1.0
 
-    for (index in 0 until n){
-        if (index % 2 == 0) {
-            number += index
+
+    for (index in 0 until exponent) {
+        if (index % 2 ==0) {
+            numberX += numberX.pow(number) / number
+            if (numberX == 2.0) {
+                numberX--
+            }
+            number +=  2
+
+        } else if (index % 2 == 1) {
+            number -= numberX.pow(number) / number
+            number += 2
+
         }
     }
-        val result =3 % 2
-    println(result)
-
-
+    println(number)
 
 }
+
 
 /**
 Write a program to compute the cosine of x. The user should supply x and a positive integer n.
@@ -521,18 +530,29 @@ cos 1 = 0.541667
  */
 fun computeCosine() {
     println("Enter positive number for x")
-    val numberX = scanner.nextDouble()
+    var numberX = readLine()!!.toDouble()
 
     println("Enter positive number that powers")
-    val power = scanner.nextDouble()
+    val power = readLine()!!.toInt()
 
-    val calcOne = numberX.pow(2) / 2    //should be added !
-    val calcTwo = numberX.pow(4) / 4    //should be added !
-    val calcThree = numberX.pow(6) / 6  //should be added !
+    var number = 1.0
 
-    val calcAll = 1 - calcOne + calcTwo - calcThree
 
-    println(calcAll)
+    for (index in 0 until power) {
+        if (index % 2 ==0) {
+            numberX += numberX.pow(number) / number
+            if (numberX == 2.0) {
+                numberX--
+            }
+            number +=  2
+
+        } else if (index % 2 == 1) {
+            number -= numberX.pow(number) / number
+            number += 2
+
+        }
+    }
+    println(number)
 }
 
 
@@ -646,9 +666,10 @@ fun sumOfTwoNumbers() {
     println("Enter another number")
     val number2 = scanner.nextInt()
 
-    val sum = number1 + number2
-    println("The sum of these two numbers is $sum")
+    println("Result is ${addTwoNumbers(number1, number2)}")
 }
+
+fun addTwoNumbers (n:Int, m: Int): Int{return n+m}
 
 
 /** User Defined Function
@@ -657,15 +678,19 @@ fun sumOfTwoNumbers() {
  * Call this function from main( ) and print the results in main( )
  */
 fun findFactorial() {
-    println("Enter number to find its factorial")
-    val userNumber = scanner.nextInt()
-    var factorial: Long = 1
-
-    for (i in factorial..userNumber) {
-        factorial *= i.toLong()
-    }
-    println("Factorial of $userNumber is $factorial")
+    println("Enter your number: ")
+    val number = readLine()!!.toInt()
+    println("Factorial of $number is ${facex1for(number)}")
 }
+
+fun facex1for (n: Int): Int {
+    var result = 1
+    for (i in 1..n){
+        result *= i
+    }
+    return result
+}
+
 
 
 /**  User Defined Function
@@ -675,18 +700,23 @@ fun findFactorial() {
  * Call this function from main( )
  */
 fun findPrimeNumbers() {
-    println("To find prime numbers, fist you should enter two numbers")
-    val prime1 = scanner.nextInt()
-    val prime2 = scanner.nextInt()
+    println("Enter two numbers: ")
+    val a = readLine()!!.toInt()
+    val b = readLine()!!.toInt()
 
+    println(" ${primeNumberFinder(a, b)} are prime numbers")
+}
 
-    for (i in prime1..prime2) {
-        if (i % 2 == 0)
+fun primeNumberFinder (a: Int, b: Int) {
+    for (i in a..b){
+        if (i % 2 == 0) {
             continue
-        else if (i % 3 == 0)
+        }
+        else if (i % 3 == 0){
             continue
-        else println(i)
-
+        }
+        else {
+            print("$i\t")}
     }
 }
 
@@ -701,17 +731,17 @@ fun findPrimeNumbers() {
  * Write the main function that gets value from the user to test power function.
  */
 fun raisingNumberToPower() {
-    println("Enter number")
-    val number = scanner.nextDouble()
+    println("Enter a number:")
+    val number = readLine()!!.toDouble()
 
-    println("Enter its power number")
-    val power = scanner.nextDouble()
+    println("Input its exponent")
+    val expo = readLine()!!.toInt()
 
-    val result = number.pow(power)
-    val result2 = number.pow(2.0)
+    println("Result is ${numberToPower(number, expo)}")
+}
 
-    println("The result is  $result")
-    println("Kvadrat of $number is $result2")
+fun numberToPower(a: Double, b: Int): Double {
+    return a.pow(b)
 }
 
 
@@ -727,13 +757,22 @@ fun findBiggerAndZero() {
 
     println("Enter second number")
     val number2 = scanner.nextLong()
-    if (number1 > number2) {
-        println("First number is $number1 \nSecond number is 0")
-    } else if (number1 == number2) {
-        println("They are equal")
-    } else {
-        println("First number is 0\nSecond number is $number2")
+
+    println(bigAndZero(number1,number2))
+}
+fun bigAndZero (number1: Long, number2: Long) {
+    when {
+        number1 > number2 -> {
+            println("First number is $number1 \nSecond number is 0")
+        }
+        number1 == number2 -> {
+            println("They are equal")
+        }
+        else -> {
+            println("First number is 0\nSecond number is $number2")
+        }
     }
+
 }
 
 /** User Defined Function
@@ -1082,7 +1121,7 @@ All old numbers of B from left to right are copied into C from right to left.
 A, B and C are passed as arguments to MIX (). e.g., A is {3, 2, 1, 7, 6, 3} and B is {9, 3, 5, 6, 2, 8, 10} the resultant
 array C is {2, 6, 6, 2, 8, 10, 5, 3, 9, 3, 7, 1, 3}
  */
-fun createMixedArrayC () {
+fun createMixedArrayC() {
     println("Enter size of the first array")
     val sizeOfFirstArray = readLine()!!.toInt()
     val arrayA = IntArray(sizeOfFirstArray)
@@ -1128,13 +1167,13 @@ fun createMixedArrayC () {
         }
     }
 
-    for (oddRightToLeft in arrayB.lastIndex downTo 0){
+    for (oddRightToLeft in arrayB.lastIndex downTo 0) {
         if (arrayB[oddRightToLeft] % 2 == 1) {
             print("${arrayB[oddRightToLeft]}\t")
         }
     }
 
-    for (oddRightToLeft in arrayA.lastIndex downTo 0){
+    for (oddRightToLeft in arrayA.lastIndex downTo 0) {
         if (arrayA[oddRightToLeft] % 2 == 1) {
             print("${arrayA[oddRightToLeft]}\t")
         }

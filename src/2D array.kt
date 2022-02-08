@@ -13,32 +13,129 @@ To display column-wise sum of matrix of size m x n
 To create transpose of matrix B of size n x m
  */
 fun matrixMenu() {
-    println("Enter the number of ROWS")
-    val rows = scanner.nextInt()
+//    var matrixUser: Array<IntArray>? = null  // reference = object  ; just type = the real thing ; design = real home
+    var testUserMatrix: Array<IntArray>? = null
+    var transposeForMatrix: Array<IntArray>? = null
 
-    println("Enter the number of COLUMNS")
-    val columns = scanner.nextInt()
+    do {
+        println(
+            "\nMENU" +
+                    "\n1. Accept elements of Matrix" +
+                    "\n2. Display elements of  Matrix" +
+                    "\n3. Sum of all elements of matrix" +
+                    "\n4. Display row-wise sum of matrix" +
+                    "\n5. Display column-wise sum of matrix" +
+                    "\n6. To create transpose of matrix B of size n x m" +
+                    "\n7. Exit"
+        )
+        println("Enter your choice")
+        val myChoice = readLine()!!.toInt()
 
-    val twoD = Array(rows) { IntArray(columns) }
-    println("Table is filled automatically")
-
-    for (row in 0 until twoD.size) {
-        val columnArray = IntArray(columns)
-        for (column in 0 until columnArray.size) {
-            val inputNumbers = (0..100).random()
-            columnArray[column] = inputNumbers
+        when (myChoice) {
+            1 -> {
+                testUserMatrix = enterElements()
+            }
+            2 -> if (testUserMatrix != null) displayingNumbers(testUserMatrix) else print("Oops")
+            3 -> if (testUserMatrix != null) println(sumOfAllElementsOfMatrix(testUserMatrix))
+            4 -> if (testUserMatrix != null) println(sumOfRowWiseOfMatrix(testUserMatrix))
+            5 -> if (testUserMatrix != null) println(sumOfColumnOfMatrix(testUserMatrix))
+            6 -> added()
+            7 -> println("You EXIT the program")
         }
 
-        twoD[row] = columnArray
+
+    } while (myChoice != 7)
+}
+
+
+fun enterElements(): Array<IntArray> {
+    println("Enter rows: ")
+    val rowIndex = readLine()!!.toInt()
+    println("Enter rows and columns: ")
+    val columnIndex = readLine()!!.toInt()
+    val testArray = Array(rowIndex) { IntArray(columnIndex) }
+
+
+    for (row in testArray.indices) {
+        val columnArray = IntArray(columnIndex)
+        for (column in columnArray.indices) {
+            val inputNumber = (0..100).random()
+            columnArray[column] = inputNumber
+        }
+        testArray[row] = columnArray
+    }
+
+    return testArray
+}
+
+
+fun displayingNumbers(displayingNumbers: Array<IntArray>) {
+    for (row in displayingNumbers.indices) {
+        println(displayingNumbers[row].contentToString())
+    }
+
+}
+
+fun sumOfAllElementsOfMatrix(matrixes: Array<IntArray>) = matrixes.sumBy { it.sum() }
+fun sumOfAllElementsOfMatrixTwo(matrixes: Array<IntArray>): Int {
+    var number = 0
+    for (row in matrixes.indices) {
+        for (column in matrixes.indices) {
+            number += matrixes[row][column]
+
+        }
+
+    }
+    println(number)
+    return number
+}
+
+fun sumOfRowWiseOfMatrix(rowSum: Array<IntArray>) = rowSum.map { it.sum() }
+
+fun sumOfColumnOfMatrix(columnSum: Array<IntArray>) =
+    columnSum[0].indices.map { col -> columnSum.sumBy { row -> row[col] } }
+
+fun createTransposeOfMatrix(transpose: Array<IntArray>): Array<IntArray> {
+    println("Transpose of Matrix :")
+    for (row in transpose.indices) {
+        println(transpose[row].contentToString())
+    }
+return transpose
+}
+
+
+fun added () {
+    println("Sorry for inconvenience, you have to enter new rows and columns")
+    println("Enter rows: ")
+    val rowIndex = readLine()!!.toInt()
+    println("Enter columns: ")
+    val columnIndex = readLine()!!.toInt()
+
+    val matrixA = Array(rowIndex) { IntArray(columnIndex) }
+    val transposeMatrix = Array(columnIndex) { IntArray(rowIndex) }
+
+
+    println("MatrixA is filled automatically: ")
+
+    for (row in matrixA.indices) {
+        for (column in matrixA[row].indices) {
+            val inputNumbers = (0..50).random()
+            matrixA[row][column] = inputNumbers
+        }
+    }
+    for (row in matrixA.indices) {
+        println(matrixA[row].contentToString())
     }
 
 
-    for (rowNumbers in twoD) {
-        for (columnNumbers in rowNumbers) {
-            print(columnNumbers)
-            print(" ")
+    println("Transpose of MatrixA is: ")
+    for (row in transposeMatrix.indices) {
+        for (column in transposeMatrix[row].indices) {
+            transposeMatrix[row][column] = matrixA[column][row]
         }
-        println()
+    }
+    for (row in transposeMatrix.indices) {
+        println(transposeMatrix[row].contentToString())
     }
 
 }
@@ -54,11 +151,11 @@ Right diagonal sum
 fun calculateDiagonalSum() {
     println("Enter size of matrix")
     val sizeOfMatrix = readLine()!!.toInt()
-    println("Size is ${sizeOfMatrix}x${sizeOfMatrix}")
+    val row = readLine()!!.toInt()
+    val column = readLine()!!.toInt()
+    println("Size is ${row}x${column}")
 
     println("Fields are filled automatically")
-    val row = sizeOfMatrix
-    val column = sizeOfMatrix
     val userTwoArray = Array(row) { IntArray(column) }
 
     for (rows in 0 until userTwoArray.size) {
@@ -115,18 +212,31 @@ fun multiplyRowToColumn() {
     val columns = scanner.nextInt()
 
     val twoD = Array(rows) { IntArray(columns) }
-    println("Table is filled automatically")
 
-    for (row in 0 until twoD.size) {
-        val columnArray = IntArray(columns)
-        for (column in 0 until columnArray.size) {
-            val inputNumbers = (0..100).random()
-            columnArray[column] = inputNumbers
+    println("Press 1 to enter numbers manually\nPress 2 to be entered automatically ")
+    val userChoice = readLine()!!.toInt()
+    if (userChoice == 1) {
+        println("Enter numbers manually:")
+        for (row in twoD.indices) {
+            val columnArray = IntArray(columns)
+            for (column in columnArray.indices) {
+                val inputNumber = readLine()!!.toInt()
+                columnArray[column] = inputNumber
+            }
+            twoD[row] = columnArray
         }
 
-        twoD[row] = columnArray
+    } else if (userChoice == 2) {
+        println("Table is filled automatically")
+        for (row in twoD.indices) {
+            val columnArray = IntArray(columns)
+            for (column in columnArray.indices) {
+                val inputNumber = (0..100).random()
+                columnArray[column] = inputNumber
+            }
+            twoD[row] = columnArray
+        }
     }
-
 
     for (rowNumbers in twoD) {
         for (columnNumbers in rowNumbers) {
@@ -135,11 +245,11 @@ fun multiplyRowToColumn() {
         }
         println()
     }
+    println("The sum of row-wise is : ${sumOfRowWiseOfMatrixTask3(twoD)}")
 
-    println("The multiplication of rows and columns is: ")
-    val result = rows * columns
-    println(result)
 }
+
+fun sumOfRowWiseOfMatrixTask3(rowSum: Array<IntArray>) = rowSum.map { it.sum() }
 
 
 /** Array - Two Dimension
@@ -185,8 +295,8 @@ fun showUpperHalf() {
 
     for (i in matrixA.indices) {
         for (j in matrixA[i].indices) {
-            if(i<=j)
-                print(""+ matrixA[i][j]+ " ")
+            if (i <= j)
+                print("" + matrixA[i][j] + " ")
             else
                 print("  ")
         }
@@ -221,9 +331,9 @@ fun calculateMiddleSumAndDisplay() {
     val column = sizeOfOddMatrix
     val userTwoArray = Array(row) { IntArray(column) }
 
-    for (rows in 0 until userTwoArray.size) {
+    for (rows in userTwoArray.indices) {
         val arrayColumn = IntArray(column)
-        for (columns in 0 until arrayColumn.size) {
+        for (columns in arrayColumn.indices) {
             val inputNumbers = (0..100).random()
             arrayColumn[columns] = inputNumbers
         }
@@ -241,7 +351,7 @@ fun calculateMiddleSumAndDisplay() {
 
     var sumRowMiddle = 0
     println("Middle row numbers are: ")
-    for (rowIndex in 0 until userTwoArray.size) {
+    for (rowIndex in userTwoArray.indices) {
         val lastPosition = userTwoArray[rowIndex].size - 1
         for (columnIndex in lastPosition downTo 0) {
             if (userTwoArray[rowIndex].size / 2 == columnIndex) {
@@ -256,7 +366,7 @@ fun calculateMiddleSumAndDisplay() {
 
     var sumColumnMiddle = 0
     println("Middle column numbers are: ")
-    for (rowIndex in 0 until userTwoArray.size) {
+    for (rowIndex in userTwoArray.indices) {
         val lastPosition = userTwoArray[rowIndex].size - 1
         for (columnIndex in lastPosition downTo 0) {
             if (userTwoArray[rowIndex].size / 2 == columnIndex) {
@@ -340,7 +450,6 @@ fun addTwoMatrices() {
  *Write a program to multiply array A and B of order NxL and LxM
  */
 fun multiplyTwoMatrices() {
-    //Input Stream
     val scanner = Scanner(System.`in`)
 
     //Input no of rows and column
@@ -400,10 +509,10 @@ fun multiplyTwoMatrices() {
     }
 
     //Product of Matrices
-    for (i in productMatrix.indices) {
-        for (j in productMatrix[i].indices) {
+    for (row in productMatrix.indices) {
+        for (column in productMatrix[row].indices) {
             for (k in matrixB.indices)
-                productMatrix[i][j] = productMatrix[i][j] + (matrixA[i][k] * matrixB[k][j])
+                productMatrix[row][column] = productMatrix[row][column] + (matrixA[row][k] * matrixB[k][column])
         }
     }
 
