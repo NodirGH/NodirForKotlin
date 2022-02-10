@@ -1,11 +1,13 @@
-class Person(val _firstName: String = "UNKNOWN", var _age: Int = 0){
-    val firstName = _firstName.capitalize()
-    val age: Int = _age
+class TheatreTicket12 {
+    var ticketPrice: Int = 0
+        set(value) {
+            field = when {
+                value < 18 -> 18
+                value in 18..30 -> value
+                else -> value
+            }
+        }
 
-init {
-   println("First name is $firstName\n" +
-            "Age is $age")
-}
-
+    var discountPrice: Int = 0
 }
 

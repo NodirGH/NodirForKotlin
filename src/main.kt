@@ -45,8 +45,8 @@ fun main(){
 //    numberTree ()
 //    palindromeNumberTree ()
 
-//    computeSinX()                          //    not working properly
-//    computeCosine ()                              // not working properly
+//    computeSinX()
+//    computeCosine ()
 
                         //LIBRARY FUNCTION
 //    calculateCompoundInterest()
@@ -71,7 +71,7 @@ fun main(){
 //    findLargestAndSmallestArray()
 //    arrayOptions()
 //    findItem()
-//    findItemBinaryOption()                                                                           //should be learned
+//    findItemBinaryOption()
 //    mergingArraysInAscendingOrder()
 //    mergingArraysInDescendingOrder()
 //    createMixedArrayC ()
@@ -90,14 +90,14 @@ fun main(){
                             //ARRAY - TWO DIMENSION
 //    matrixMenu ()                               //not finished
 //    calculateDiagonalSum()
-//    multiplyRowToColumn ()                                                   //should be corrected
+//    multiplyRowToColumn ()
 //    showUpperHalf ()
 //    calculateMiddleSumAndDisplay ()
-//    addTwoMatrices ()                                                                     //should be learned
-//      multiplyTwoMatrices ()                                                                //should be learned
+//    addTwoMatrices ()
+//      multiplyTwoMatrices ()
 
-
-
+                                                //Object oriented project (OOP)
+oopMain()
 
 //        forFun()
 //        testMain()

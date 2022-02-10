@@ -1,15 +1,17 @@
 fun oopMain() {
 
-    println("person1 is shown")
-    val person1 = Person("jack", 25)
+    val movieNames = MovieNames()
+    val yourChoice = movieNames.yourChoice
+    val discount = FillFormForDiscount()
+    val fillingSurname = discount.fillSurname
+    val usersSurname = discount.userSurname
+    val fillingName = discount.fillName
+    val usersName = discount.userName
+    val filingAge = discount.fillAge
+    val usersAge =  discount.userAge
 
-    println("Here is person2")
-    val person2 = Person("jack")
-
-    println("Finally, it is person3")
-    val person3 = Person()
-
-
+    val informationForPayment = InfoCustomer(usersSurname, usersName, usersAge, "Name of movie", 50, 30, 35)
+    informationForPayment.customerInformationForPyment
 
 
 
