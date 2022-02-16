@@ -500,12 +500,12 @@ fun computeSinX() {
 
 
     for (index in 0 until exponent) {
-        if (index % 2 ==0) {
+        if (index % 2 == 0) {
             numberX += numberX.pow(number) / number
             if (numberX == 2.0) {
                 numberX--
             }
-            number +=  2
+            number += 2
 
         } else if (index % 2 == 1) {
             number -= numberX.pow(number) / number
@@ -539,12 +539,12 @@ fun computeCosine() {
 
 
     for (index in 0 until power) {
-        if (index % 2 ==0) {
+        if (index % 2 == 0) {
             numberX += numberX.pow(number) / number
             if (numberX == 2.0) {
                 numberX--
             }
-            number +=  2
+            number += 2
 
         } else if (index % 2 == 1) {
             number -= numberX.pow(number) / number
@@ -669,7 +669,9 @@ fun sumOfTwoNumbers() {
     println("Result is ${addTwoNumbers(number1, number2)}")
 }
 
-fun addTwoNumbers (n:Int, m: Int): Int{return n+m}
+fun addTwoNumbers(n: Int, m: Int): Int {
+    return n + m
+}
 
 
 /** User Defined Function
@@ -683,14 +685,13 @@ fun findFactorial() {
     println("Factorial of $number is ${facex1for(number)}")
 }
 
-fun facex1for (n: Int): Int {
+fun facex1for(n: Int): Int {
     var result = 1
-    for (i in 1..n){
+    for (i in 1..n) {
         result *= i
     }
     return result
 }
-
 
 
 /**  User Defined Function
@@ -707,16 +708,15 @@ fun findPrimeNumbers() {
     println(" ${primeNumberFinder(a, b)} are prime numbers")
 }
 
-fun primeNumberFinder (a: Int, b: Int) {
-    for (i in a..b){
+fun primeNumberFinder(a: Int, b: Int) {
+    for (i in a..b) {
         if (i % 2 == 0) {
             continue
-        }
-        else if (i % 3 == 0){
+        } else if (i % 3 == 0) {
             continue
+        } else {
+            print("$i\t")
         }
-        else {
-            print("$i\t")}
     }
 }
 
@@ -758,9 +758,10 @@ fun findBiggerAndZero() {
     println("Enter second number")
     val number2 = scanner.nextLong()
 
-    println(bigAndZero(number1,number2))
+    println(bigAndZero(number1, number2))
 }
-fun bigAndZero (number1: Long, number2: Long) {
+
+fun bigAndZero(number1: Long, number2: Long) {
     when {
         number1 > number2 -> {
             println("First number is $number1 \nSecond number is 0")
@@ -904,7 +905,7 @@ fun findLargestAndSmallestArray() {
     val userArray = IntArray(sizeOfArray)
 
     println("Enter numbers you want:")
-    for (index in 0 until userArray.size) {
+    for (index in userArray.indices) {
         val inputYourNumbers = scanner.nextInt()
         userArray[index] = inputYourNumbers
     }
@@ -1356,3 +1357,38 @@ fun convertUppercase() {
     println(uppercase)
 }
 
+
+fun getGameChoice(optionsParam: Array<String>) = optionsParam[(Math.random() * optionsParam.size).toInt()]
+
+fun getUserChoice (optionsParam: Array<String>): String{
+
+}
+
+
+fun doSomething(msg: String, i: Int): Unit {
+    if (i > 0) {
+        var x = 0
+        while (x < i) {
+            println(msg)
+            x++
+        }
+    }
+}
+
+
+fun timesThree(x: Int): Int {
+    var y = x * 3
+
+    return y
+}
+
+fun maxValue(args: Array<Int>): Int {
+    var max = args[0]
+    var x = 1
+    while (x < args.size) {
+        var item = args[x]
+        max = if (max >= item) max else item
+        x++
+    }
+    return max
+}

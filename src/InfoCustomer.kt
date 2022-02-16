@@ -1,5 +1,6 @@
 class InfoCustomer (surname: String, name: String, age: Int, movieName: String, priceOfmovie: Int, discount: Int, finalPayment: Int){
-    val customerInformationForPyment = println("""
+
+    val customerInformationForPayment = println("""
                                     CUSTOMER INFORMATION FOR PAYMENT
                             Customer surname:               $surname
                             Customer name:                  $name

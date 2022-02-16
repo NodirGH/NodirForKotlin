@@ -1,5 +1,5 @@
-class MovieNames{
-      val movieNames = println(
+class MovieNames {
+    val movieNames = println(
         """
 
                                 Welcome to our wonderful theatre!
@@ -13,13 +13,13 @@ class MovieNames{
 
           Thank you for choosing our theatre!
 
-         println("Please choose movie number: ")
+                    Please choose movie number: 
              """.trimIndent()
     )
 
     val yourChoice = readLine()!!.toInt()
 
-    val greatNews =  println(
+    val greatNews = println(
         """
 
                                     GREAT NEWS!
@@ -27,4 +27,14 @@ class MovieNames{
 
     """.trimIndent()
     )
+
+  open fun displayMovieName() {
+        when (yourChoice) {
+            1 -> println("Avengers Infinity War")
+            2 -> println("Terminal")
+            3 -> println("Captain America")
+            4 -> println("Avengers Endgame")
+            5 -> println("SpiderMan No Way Home")
+        }
+    }
 }
