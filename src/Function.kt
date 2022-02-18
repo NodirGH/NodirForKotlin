@@ -1358,37 +1358,82 @@ fun convertUppercase() {
 }
 
 
-fun getGameChoice(optionsParam: Array<String>) = optionsParam[(Math.random() * optionsParam.size).toInt()]
+/**
+ *  OBJECT ORIENTED PROJECT
+ */
 
-fun getUserChoice (optionsParam: Array<String>): String{
+//TASK 1
 
-}
+class Student() {
+    private var id: Int = 0
+    private var name: String = ""
+    private var english: Float = 0f
+    private var math: Float = 0f
+    private var science: Float? = null
+    private var total: Float = 0.0f
 
+    private fun calculateTotal(): Float {
+        if (science != null)
+            total = english + math + science!!
+        return total
+    }
 
-fun doSomething(msg: String, i: Int): Unit {
-    if (i > 0) {
-        var x = 0
-        while (x < i) {
-            println(msg)
-            x++
-        }
+    fun assignData(id: Int, name: String, english: Float, math: Float, science: Float) {
+        this.id = id
+        this.name = name
+        this.english = english
+        this.math = math
+        this.science = science
+        calculateTotal()
+    }
+    fun getDataFromUser(){
+        println()
+        println("Please enter your ID:")
+        val userId = readLine()!!.toInt()
+        this.id = userId
+
+        println("Please enter your name:")
+        val userName = readLine()!!.toString()
+        if (userName.length < 20) {
+        this.name = userName }
+        else {println("You entered more than 20 characters")
+        return}
+
+        println("Please enter your english score:")
+        val userEnglish = readLine()!!.toFloat()
+        this.english = userEnglish
+
+        println("Please enter your math score:")
+        val userMath = readLine()!!.toFloat()
+        this.math = userMath
+
+        println("Please enter your science score:")
+        val userScience = readLine()!!.toFloat()
+        this.science = userScience
+        println(showData())
+//        println("Your overall score is ${calculateTotal()}")
+    }
+
+    fun showData(){
+        println("""
+       Student's ID:                ${this.id}
+       Student's name:              ${this.name}
+       Student's english score:     ${this.english}
+       Student's math score:        ${this.math}
+       Student's science score:     ${this.science}
+       Student's overall point:     ${calculateTotal()}
+        """.trimIndent())
     }
 }
 
 
-fun timesThree(x: Int): Int {
-    var y = x * 3
 
-    return y
-}
 
-fun maxValue(args: Array<Int>): Int {
-    var max = args[0]
-    var x = 1
-    while (x < args.size) {
-        var item = args[x]
-        max = if (max >= item) max else item
-        x++
-    }
-    return max
-}
+
+
+//                          TASK 2
+
+
+
+
+

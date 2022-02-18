@@ -1,4 +1,4 @@
-import com.sun.jdi.ShortType
+
 
 fun oopMain() {
 
@@ -16,15 +16,13 @@ fun oopMain() {
 //    val informationForPayment = InfoCustomer(usersSurname, usersName, usersAge, "MovieNames", 50, 30, 35)
 //    informationForPayment.customerInformationForPayment
 
-//    val options = arrayOf("Rock", "Paper", "Scissors")
-//    val gameChoice = getGameChoice(options)
+/**     TASK 1
+val student = Student()
+   student.getDataFromUser()
+*/
 
-    doSomething("Book",5)
 
-    println(timesThree(5))
 
-    val myArray1: Int= maxValue(3,6,9)
-    println(myArray1)
 
 
 }
