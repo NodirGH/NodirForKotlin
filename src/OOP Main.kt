@@ -1,5 +1,3 @@
-
-
 fun oopMain() {
 
 //    val movieNames = MovieNames()
@@ -16,16 +14,55 @@ fun oopMain() {
 //    val informationForPayment = InfoCustomer(usersSurname, usersName, usersAge, "MovieNames", 50, 30, 35)
 //    informationForPayment.customerInformationForPayment
 
-/**     TASK 1
-val student = Student()
-   student.getDataFromUser()
-*/
+    /** TASK 1  */
+    val student = Student()
+    student.getDataFromUser()
+    student.showData()
+
+    /** TASK 2 */
+//    val batsman = Batsman()
+//    batsman.readData()
+//    batsman.displayData()
+
+
+    /**  TASK 3 */
+//    val testCenter = Test()
+//    testCenter.schedule()
+//    testCenter.displayTest()
+
+    /**  TASK 4 */
+//    val airplane = Airplane()
+//    airplane.feedInfo()
+//    airplane.showInfo()
+
+    /**  TASK 5 */
+//    val book = Book()
+//    book.input()
+//    book.displayPaymentInfo()
+
+    /**  TASK 6 */
+//    val report = Report()
+//    report.readInfo()
+//    report.displayInfo()
+
+    /** SET 2      TASK 1 */
+//    val rectangle = Rectangle()
+//    rectangle.setLengthOne()
+//    rectangle.setWidthOne()
+//
+//    rectangle.setLengthTwo()
+//    rectangle.setWidthTwo()
+//
+//    rectangle.show()
+//    rectangle.check()
 
 
 
 
 
 }
+
+
 
 
 

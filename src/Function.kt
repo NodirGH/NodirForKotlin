@@ -1,4 +1,3 @@
-import java.lang.Math.pow
 import java.util.*
 import kotlin.math.*
 
@@ -18,7 +17,7 @@ fun hiWorld() {
 //    val b = 77
 //    val c = 69
 //
-//    printn(subject /n mathematics)
+//    println(subject /n mathematics)
 //}
 
 fun sum() {
@@ -36,10 +35,10 @@ fun sum() {
 
 
 fun temperature() {
-    println("Enter temperature in Farenheit")
-    val faren = scanner.nextDouble()
+    println("Enter temperature in Fahrenheit")
+    val fahrenheit = scanner.nextDouble()
 
-    val cel = (faren - 32) / 1.8
+    val cel = (fahrenheit - 32) / 1.8
 
     println("It is $cel in centigrade")
 }
@@ -64,9 +63,9 @@ fun swap() {
  */
 fun ascii() {
     println("Enter any character")
-    val charac = scanner.nextInt(); scanner.nextLine()
+    val character = scanner.nextInt(); scanner.nextLine()
 
-    println(charac.hashCode())
+    println(character.hashCode())
 }
 
 fun radius() {
@@ -212,20 +211,20 @@ fun profitLost() {
 
 fun whoIsYoungest() {
     println("Enter Ram's age")
-    val Ram = scanner.nextInt()
+    val ram = scanner.nextInt()
 
-    println("Enter Suabh's age")
-    val Sulabh = scanner.nextInt()
+    println("Enter Nick's age")
+    val nick = scanner.nextInt()
 
     println("Enter Ajay's age")
-    val Ajay = scanner.nextInt()
+    val ajay = scanner.nextInt()
 
-    if (Ram < Sulabh && Ram < Ajay) {
-        println("Ram is youngest. He is $Ram years old")
-    } else if (Sulabh < Ram && Sulabh < Ajay) {
-        println("Sulabh is youngest. He is $Sulabh years old")
+    if (ram < nick && ram < ajay) {
+        println("Ram is youngest. He is $ram years old")
+    } else if (nick < ram && nick < ajay) {
+        println("Nick is youngest. He is $nick years old")
     } else {
-        println("Ajay is youngest. He is $Ajay years old")
+        println("Ajay is youngest. He is $ajay years old")
     }
 }
 
@@ -264,17 +263,17 @@ fun grossSalary() {
     println("Enter salary (Rs)")
     val salary = scanner.nextInt()
 
-    val HRA = salary / 100 * 10
-    val DA1 = salary / 100 * 90
+    val hRA = salary / 100 * 10
+    val dA1 = salary / 100 * 90
 
-    val DA2 = salary / 100 * 98
+    val dA2 = salary / 100 * 98
 
     if (salary < 1500) {
-        println("HRA = $HRA")
-        println("DA = $DA1")
-    } else if (salary >= 1500) {
-        println("HRA = $HRA")
-        println("DA =  $DA2")
+        println("HRA = $hRA")
+        println("DA = $dA1")
+    } else {
+        println("HRA = $hRA")
+        println("DA =  $dA2")
     }
 }
 
@@ -481,7 +480,7 @@ fun palindromeNumberTree() {
 
 /** Flow of control
  * set 3 task 2
- * Write a program to compute sinx for given x. The user should supply x
+ * Write a program to compute sin x for given x. The user should supply x
  * and a positive integer n. We compute the sine of x using the series and
  * the computation should use all terms in the
  * series up through the term involving xn
@@ -495,25 +494,25 @@ fun computeSinX() {
     var numberX: Double = readLine()!!.toDouble()
 
     println("Enter positive number for exponent")
-    val exponent: Int = readLine()!!.toInt()
-    var number = 1.0
+    val exponentNumber: Int = readLine()!!.toInt()
+    var numberFloat = 1.0
 
 
-    for (index in 0 until exponent) {
+    for (index in 0 until exponentNumber) {
         if (index % 2 == 0) {
-            numberX += numberX.pow(number) / number
+            numberX += numberX.pow(numberFloat) / numberFloat
             if (numberX == 2.0) {
                 numberX--
             }
-            number += 2
+            numberFloat += 2
 
-        } else if (index % 2 == 1) {
-            number -= numberX.pow(number) / number
-            number += 2
+        } else {
+            numberFloat -= numberX.pow(numberFloat) / numberFloat
+            numberFloat += 2
 
         }
     }
-    println(number)
+    println(numberFloat)
 
 }
 
@@ -535,24 +534,22 @@ fun computeCosine() {
     println("Enter positive number that powers")
     val power = readLine()!!.toInt()
 
-    var number = 1.0
-
-
+    var userNumberForUse = 1.0
     for (index in 0 until power) {
         if (index % 2 == 0) {
-            numberX += numberX.pow(number) / number
+            numberX += numberX.pow(userNumberForUse) / userNumberForUse
             if (numberX == 2.0) {
                 numberX--
             }
-            number += 2
+            userNumberForUse += 2
 
-        } else if (index % 2 == 1) {
-            number -= numberX.pow(number) / number
-            number += 2
+        } else {
+            userNumberForUse -= numberX.pow(userNumberForUse) / userNumberForUse
+            userNumberForUse += 2
 
         }
     }
-    println(number)
+    println(userNumberForUse)
 }
 
 
@@ -568,7 +565,7 @@ fun calculateCompoundInterest() {
     val rate = scanner.nextDouble()
     val time = scanner.nextDouble()
 
-    val interest = principal * pow((1 + rate / 100), time) - principal
+    val interest = principal * (1 + rate / 100).pow(time) - principal
     println("Compound interest is $interest")
 }
 
@@ -611,7 +608,7 @@ fun showCharacters() {
 
 /** Library function
  * set 1 task 4
- * Write a program which display a number between 10 to 100 randomly
+ * Write a program which display a number between 10 and 100 randomly
  */
 fun findRandomNumber() {
     val random = (10..100).random()
@@ -622,7 +619,7 @@ fun findRandomNumber() {
  * set 1 task 5
  * Write a program which accept a letter and display it in uppercase letter
  */
-fun MakeUppercase() {
+fun makeUppercase() {
     println("Write any letter")
     val letter = scanner.next()
     println(letter.toUpperCase())
@@ -682,10 +679,10 @@ fun addTwoNumbers(n: Int, m: Int): Int {
 fun findFactorial() {
     println("Enter your number: ")
     val number = readLine()!!.toInt()
-    println("Factorial of $number is ${facex1for(number)}")
+    println("Factorial of $number is ${faceFor(number)}")
 }
 
-fun facex1for(n: Int): Int {
+fun faceFor(n: Int): Int {
     var result = 1
     for (i in 1..n) {
         result *= i
@@ -779,17 +776,17 @@ fun bigAndZero(number1: Long, number2: Long) {
 /** User Defined Function
  *  set 2 task 1
  *Write a program that lets the user perform arithmetic operations on two numbers.
- * Your program must be menu driven, allowing the user to select
+ * Your program must be "menu-driven", allowing the user to select
  * the operation (+, -, *, or /) * and input the numbers. Furthermore,
  * your program must consist of following functions:
 1. Function showChoice: This function shows the options to the user
 and explains how to enter data.
-2. Function add: This function accepts two number as arguments and returns sum.
-3. Function subtract: This function accepts two number as arguments
+2. Function add: This function accepts two numbers as arguments and returns sum.
+3. Function subtract: This function accepts two numbers as arguments
 and returns their difference.
-4. Function mulitiply: This function accepts two number as arguments
+4. Function multiply: This function accepts two numbers as arguments
 and returns product.
-5. Function divide: This function accepts two number as arguments
+5. Function divide: This function accepts two numbers as arguments
 and returns quotient.
  */
 fun calculation() {
@@ -824,7 +821,7 @@ fun findSumAndAverageArray() {
 
     var sum = 0
     println("Enter numbers")
-    for (index in 0 until userArray.size) {
+    for (index in userArray.indices) {
         val inputNumbers = scanner.nextInt()
         userArray[index] = inputNumbers
     }
@@ -850,13 +847,13 @@ fun swapFirstAndLastElement() {
     val userArray = IntArray(sizeOfArray)
 
     println("Enter numbers")
-    for (index in 0 until userArray.size) {
+    for (index in userArray.indices) {
         val inputNumber = scanner.nextInt()
         userArray[index] = inputNumber
     }
     println("Numbers which you entered are: ")
-    for (index in 0 until userArray.size) {
-        print("${userArray[index]}\t")
+    for (element in userArray) {
+        print("${element}\t")
     }
     println()
     println("After swapping first and last:")
@@ -879,13 +876,13 @@ fun reverseArray() {
     val userArray = IntArray(sizeOfArray)
 
     println("Enter your numbers")
-    for (index in 0 until userArray.size) {
+    for (index in userArray.indices) {
         val inputNumber = scanner.nextInt()
         userArray[index] = inputNumber
     }
     println("Your numbers are: ")
-    for (index in 0 until userArray.size) {
-        print("${userArray[index]}\t")
+    for (element in userArray) {
+        print("${element}\t")
     }
     println()
     println("After reversing these numbers: ")
@@ -940,7 +937,7 @@ fun findItem() {
     val userArray = IntArray(sizeOfArray)
 
     println("Enter numbers")
-    for (index in 0 until userArray.size) {
+    for (index in userArray.indices) {
         val inputEachNumber = scanner.nextInt()
         userArray[index] = inputEachNumber
     }
@@ -949,8 +946,8 @@ fun findItem() {
     val usersChoice = scanner.nextInt()
     var isFound = false
 
-    for (search in 0 until userArray.size)
-        if (usersChoice == userArray[search]) {
+    for (element in userArray)
+        if (usersChoice == element) {
             isFound = true
             break
         }
@@ -1013,17 +1010,17 @@ fun findItemBinaryOption() {
 
 /** Array - Single Dimension
  * set 1 task 8
-Suppose A, B, C are arrays of integers of size M, N, and M + N respectively. The numbers in array A appear
+Suppose A, B, C are arrays of integers of size M, N, and M + N respectively. The numbers in array appear
 in ascending order while the numbers in array B appear in descending order. Write a user defined function
 in C++ to produce third array C by merging arrays A and B in ascending order. Use A, B and C as arguments in the function
  */
 fun mergingArraysInAscendingOrder() {
-    println("Enter  size of Array:")
+    println("Input size for Array:")
     val sizeOfArray = scanner.nextInt()
     val userArray = IntArray(sizeOfArray)
 
     println("Enter numbers in ascending order")
-    for (index in 0 until userArray.size) {
+    for (index in userArray.indices) {
         val inputNumbers = scanner.nextInt()
         userArray[index] = inputNumbers
     }
@@ -1033,7 +1030,7 @@ fun mergingArraysInAscendingOrder() {
     val userSecondArray = IntArray(sizeOfSecondArray)
 
     println("Enter numbers descending order")
-    for (indexTwo in 0 until userSecondArray.size) {
+    for (indexTwo in userSecondArray.indices) {
         val inputSecondNumbers = scanner.nextInt()
         userSecondArray[indexTwo] = inputSecondNumbers
     }
@@ -1055,8 +1052,8 @@ fun mergingArraysInAscendingOrder() {
     }
 
     println("Sorted numbers are:")
-    for (index in 0 until mergingArray.size) {
-        print("${mergingArray[index]}\t")
+    for (element in mergingArray) {
+        print("${element}\t")
     }
 }
 
@@ -1069,11 +1066,11 @@ fun mergingArraysInAscendingOrder() {
 
 fun mergingArraysInDescendingOrder() {
     println("Enter  size of Array:")
-    val sizeOfArray = scanner.nextInt()
-    val userArray = IntArray(sizeOfArray)
+    val arraySizeForUser = scanner.nextInt()
+    val userArray = IntArray(arraySizeForUser)
 
-    println("Enter numbers in ascending order")
-    for (index in 0 until userArray.size) {
+    println("Numbers should be entered in ascending order")
+    for (index in userArray.indices) {
         val inputNumbers = scanner.nextInt()
         userArray[index] = inputNumbers
     }
@@ -1083,7 +1080,7 @@ fun mergingArraysInDescendingOrder() {
     val userSecondArray = IntArray(sizeOfSecondArray)
 
     println("Enter numbers descending order")
-    for (indexTwo in 0 until userSecondArray.size) {
+    for (indexTwo in userSecondArray.indices) {
         val inputSecondNumbers = scanner.nextInt()
         userSecondArray[indexTwo] = inputSecondNumbers
     }
@@ -1105,8 +1102,8 @@ fun mergingArraysInDescendingOrder() {
     }
 
 
-    for (index in 0 until mergingArray.size) {
-        print("${mergingArray[index]}\t")
+    for (element in mergingArray) {
+        print("${element}\t")
     }
 }
 
@@ -1128,7 +1125,7 @@ fun createMixedArrayC() {
     val arrayA = IntArray(sizeOfFirstArray)
 
     println("Enter number for the first array")
-    for (index in 0 until arrayA.size) {
+    for (index in arrayA.indices) {
         val inputFirstArray = readLine()!!.toInt()
         arrayA[index] = inputFirstArray
     }
@@ -1138,31 +1135,31 @@ fun createMixedArrayC() {
     val arrayB = IntArray(sizeOfSecondArray)
 
     println("Enter numbers for the second array")
-    for (index in 0 until arrayB.size) {
+    for (index in arrayB.indices) {
         val inputSecondArray = readLine()!!.toInt()
         arrayB[index] = inputSecondArray
     }
 
     println("The numbers which you entered for the first array are: ")
-    for (index in 0 until arrayA.size) {
-        print("${arrayA[index]}\t")
+    for (element in arrayA) {
+        print("${element}\t")
     }
     println()
     println("The numbers which you entered for the second array are: ")
-    for (index in 0 until arrayB.size) {
-        print("${arrayB[index]}\t")
+    for (element in arrayB) {
+        print("${element}\t")
     }
 
     println()
     println("Array C is equal to: ")
     var actionFirst: Int
-    for (evenLeftToRight in 0 until arrayA.size) {
+    for (evenLeftToRight in arrayA.indices) {
         if (arrayA[evenLeftToRight] % 2 == 0) {
             print("${arrayA[evenLeftToRight]}\t")
         }
     }
 
-    for (evenLeftToRight in 0 until arrayB.size) {
+    for (evenLeftToRight in arrayB.indices) {
         if (arrayB[evenLeftToRight] % 2 == 0) {
             print("${arrayB[evenLeftToRight]}\t")
         }
@@ -1364,7 +1361,7 @@ fun convertUppercase() {
 
 //TASK 1
 
-class Student() {
+class Student {
     private var id: Int = 0
     private var name: String = ""
     private var english: Float = 0f
@@ -1386,8 +1383,8 @@ class Student() {
         this.science = science
         calculateTotal()
     }
-    fun getDataFromUser(){
-        println()
+
+    fun getDataFromUser() {
         println("Please enter your ID:")
         val userId = readLine()!!.toInt()
         this.id = userId
@@ -1395,9 +1392,11 @@ class Student() {
         println("Please enter your name:")
         val userName = readLine()!!.toString()
         if (userName.length < 20) {
-        this.name = userName }
-        else {println("You entered more than 20 characters")
-        return}
+            this.name = userName
+        } else {
+            println("You entered more than 20 characters")
+            return
+        }
 
         println("Please enter your english score:")
         val userEnglish = readLine()!!.toFloat()
@@ -1410,20 +1409,383 @@ class Student() {
         println("Please enter your science score:")
         val userScience = readLine()!!.toFloat()
         this.science = userScience
-        println(showData())
-//        println("Your overall score is ${calculateTotal()}")
+
     }
 
-    fun showData(){
-        println("""
+    fun showData() {
+        println(
+            """
        Student's ID:                ${this.id}
        Student's name:              ${this.name}
        Student's english score:     ${this.english}
        Student's math score:        ${this.math}
        Student's science score:     ${this.science}
        Student's overall point:     ${calculateTotal()}
-        """.trimIndent())
+        """.trimIndent()
+        )
     }
+}
+
+
+//                          TASK 2
+class Batsman {
+    private var code: Int = 0
+    private var name: String = ""
+    private var innings: Int = 0
+    private var notOuts: Int = 0
+    private var runs: Int = 0
+    private var batAvg: Int = 0
+
+    private fun calcAvg(): Int {
+        batAvg = runs / (innings + notOuts)
+        return batAvg
+    }
+
+    fun readData() {
+        println("Enter your 4 digit code:")
+        val inputCode = readLine()!!.toInt()
+        if (inputCode in 1000..9999) {
+            this.code = inputCode
+        } else {
+            println("Invalid code. You must enter 4 digit numbers!")
+            return
+        }
+
+        println("Enter your name")
+        val inputName = readLine()!!.toString()
+        if (inputName.length < 20) {
+            this.name = inputName
+        } else {
+            println("You entered more than 20 characters")
+            return
+        }
+
+        println("How many days were you inside. Enter the number of the days:")
+        val inputInnings = readLine()!!.toInt()
+        this.innings = inputInnings
+
+        println("How many days were you outside. Enter the number of the days:")
+        val inputNotOut = readLine()!!.toInt()
+        this.notOuts = inputNotOut
+
+        println("How many days did you run. Enter the number of the days:")
+        val inputRuns = readLine()!!.toInt()
+        this.runs = inputRuns
+
+        calcAvg()
+
+    }
+
+    fun displayData() {
+        println(
+            """
+       Student's code:                     ${this.code}
+       Student's name:                     ${this.name}
+       Student's inside days:              ${this.innings}
+       Student's outside days:             ${this.notOuts}
+       Student's run days:                 ${this.runs}
+       Student's average running days:     ${calcAvg()}
+        """.trimIndent()
+        )
+    }
+}
+
+class Test {
+    private var testCode: Int = 0
+    private var description: String = ""
+    private var noCandidate: Int = 0
+    private var centerRequired: Int = 0
+
+    private fun calcNTR(): Int {
+        return noCandidate / (100 + 1)
+    }
+
+
+    fun schedule() {
+        println("Enter your TEST CODE:")
+        val userTestCode = readLine()!!.toInt()
+        this.testCode = userTestCode
+
+        println("Description should be given:")
+        val userDescription = readLine()!!.toString()
+        this.description = userDescription
+
+        println("Enter your candidate number:")
+        val userCandidateNumber = readLine()!!.toInt()
+        this.noCandidate = userCandidateNumber
+
+        println("Enter the number of centers which are required:")
+        val userCenterRequired = readLine()!!.toInt()
+        this.centerRequired = userCenterRequired
+
+        calcNTR()
+    }
+
+    fun displayTest() {
+        println(
+            """
+       Candidate's code:                     ${this.testCode}
+       Candidate's description:              ${this.description}
+       Candidate's number     :              ${this.noCandidate}
+       The number of required centers:       ${this.centerRequired}
+       The number of centers:                ${this.calcNTR()}
+               """.trimIndent()
+        )
+    }
+}
+
+
+class Airplane {
+    private var flightNumber: Int = 0
+    private var destination: String = ""
+    private var distance: Float = 0f
+    private var fuel: Float = 0f
+
+    private fun calculateFuel(): Float {
+        val distanceTwo = distance.toInt()
+        if (distanceTwo <= 1000) {
+            val airplaneFuel = 500f
+            this.fuel = airplaneFuel
+            return fuel
+        }
+
+        if (distanceTwo in 1001..2000) {
+            val airplaneFuel = 1100f
+            this.fuel = airplaneFuel
+            return fuel
+        }
+
+        if (distanceTwo in 2001..9999999999999) {
+            val airplaneFuel = 2200f
+            this.fuel = airplaneFuel
+            return fuel
+        }
+        return distance
+    }
+
+    fun feedInfo() {
+        println("Enter flight number:")
+        val flightNumber = readLine()!!.toInt()
+        this.flightNumber = flightNumber
+
+
+        println("Where do you want to fly. Enter you DESTINATION:")
+        val destination = readLine()!!.toString()
+        this.destination = destination
+
+        println("Enter its distance (km) :")
+        val distance = readLine()!!.toFloat()
+        this.distance = distance
+
+        calculateFuel()
+    }
+
+    fun showInfo() {
+        println(
+            """
+       Flight number:                     ${this.flightNumber}
+       Destination:                       ${this.destination}
+       Distance:                          ${this.distance}
+       Required fuel:                     ${this.calculateFuel()}
+       
+               """.trimIndent()
+        )
+    }
+}
+
+
+class Book {
+    private var bookNumber: Int = 0
+    private var bookTitle: String = ""
+    private var price: Float = 0f
+    private var numberOfCopies: Int = 0
+
+    private fun totalCost(): Float {
+        return price * numberOfCopies
+    }
+
+    fun input() {
+        println("Enter book number:")
+        val inputBookNumber = readLine()!!.toInt()
+        this.bookNumber = inputBookNumber
+
+        println("Enter the title of the book:")
+        val inputBookTitle = readLine()!!.toString()
+        if (inputBookTitle.length < 20) {
+            this.bookTitle = inputBookTitle
+        } else {
+            println("Invalid input. Please enter no more than 20 character")
+            return
+        }
+        val inputPrice = 5f
+        this.price = inputPrice
+        println("This book cost $price$")
+
+        println("How many books do you want to buy. Please enter its number:")
+        val inputCopies = readLine()!!.toInt()
+        this.numberOfCopies = inputCopies
+
+        totalCost()
+    }
+
+    fun displayPaymentInfo() {
+        println(
+            """
+       Book number:                       ${this.bookNumber}
+       Title of the book:                 ${this.bookTitle}
+       Price of this book:                ${this.price}$
+       Number of ordered copies:          ${this.numberOfCopies}
+       Total payment:                     ${this.totalCost()}$
+       
+               """.trimIndent()
+        )
+    }
+}
+
+
+class Report {
+    private var admissionNumber: Int = 0
+    private var name: String = ""
+    private var marks: Array<Float> = arrayOf(0f, 0f, 0f, 0f, 0f)
+    private var average: Float = 0f
+
+    private fun getAverage(): Double {
+        return marks.average()
+    }
+
+    fun readInfo() {
+        println("Enter your 4 digit admission number:")
+        val adNumber = readLine()!!.toInt()
+        if (adNumber in 1000..9999) {
+            this.admissionNumber = adNumber
+        } else {
+            println("Invalid number. You must enter 4 digit number")
+            return
+        }
+
+        println("Write you name:")
+        val name = readLine()!!.toString()
+        if (name.length <= 20) {
+            this.name = name
+        } else {
+            println("Invalid input. You can't use more than 20 characters")
+            return
+        }
+
+        println("Enter your mark from these subjects")
+        val subjects = arrayOf("English: ", "Math:    ", "Physics: ", "IT:      ", "History: ")
+        val marksFromSubjects: Array<Float> = arrayOf(0f, 0f, 0f, 0f, 0f)
+        for (subject in subjects.indices) {
+            println(subjects[subject])
+            val inputMark = readLine()!!.toFloat()
+            marksFromSubjects[subject] = inputMark
+            this.marks[subject] = marksFromSubjects[subject]
+        }
+
+        getAverage()
+    }
+
+    fun displayInfo() {
+        println(
+            """
+       User's admission number:           ${this.admissionNumber}
+       User's name:                       ${this.name}
+       Marks from 5 subjects:     
+       English                            ${marks[0]}   
+       Math                               ${marks[1]}
+       Physics                            ${marks[2]}
+       IT                                 ${marks[3]}
+       History                            ${marks[4]}
+       Average  mark from subjects:       ${this.getAverage()}
+               """.trimIndent()
+        )
+    }
+}
+
+
+class Rectangle {
+    private var lengthOne: Float = 0f
+    private var widthOne: Float = 0f
+    private var perimeterOne: Float = 0f
+    private var areaOne: Float = 0f
+
+    private var lengthTwo: Float = 0f
+    private var widthTwo: Float = 0f
+    private var perimeterTwo: Float = 0f
+    private var areaTwo: Float = 0f
+
+
+    fun setLengthOne(): Float{
+        println("Enter first rectangle's length: ")
+        val length = readLine()!!.toFloat()
+        this.lengthOne = length
+        return length
+    }
+
+    fun setWidthOne(): Float {
+        println("Enter first rectangle's width: ")
+        val width = readLine()!!.toFloat()
+        this.widthOne = width
+        return width
+    }
+
+    fun perimeterRectangleOne(): Float {
+        return (lengthOne * 2) + (widthOne * 2)
+    }
+
+    fun areaOne(): Float {
+        return lengthOne * widthOne
+    }
+
+    fun setLengthTwo(): Float {
+        println("Enter second rectangle's length: ")
+        val length = readLine()!!.toFloat()
+        this.lengthTwo = length
+        return  length
+    }
+
+    fun setWidthTwo(): Float {
+        println("Enter second rectangle's width: ")
+        val width = readLine()!!.toFloat()
+        this.widthTwo = width
+        return width
+    }
+
+    fun perimeterRectangleTwo(): Float {
+        return (lengthTwo * 2) + (widthTwo * 2)
+    }
+
+    fun areaTwo(): Float {
+        return lengthTwo * widthTwo
+    }
+
+    fun show() {
+        println(
+            """
+                 Information about first rectangle:
+        Rectangle's length:         $lengthOne
+        Rectangle's width:          $widthOne
+        Rectangle's perimeter:      ${perimeterRectangleOne()}
+        Rectangle's area:           ${areaOne()}
+        
+                  Information about first rectangle:
+        Rectangle's length:         $lengthTwo
+        Rectangle's width:          $widthTwo
+        Rectangle's perimeter:      ${perimeterRectangleTwo()}
+        Rectangle's area:           ${areaTwo()}
+    """.trimIndent()
+        )
+    }
+
+    fun check (){
+        if (lengthOne == lengthTwo && widthTwo == widthOne || lengthOne == widthTwo && widthOne == lengthTwo){
+            println(" (1) which means both rectangles are equal")
+        } else {
+            println(" (2) which means these rectangles are not equal")
+        }
+    }
+
+
 }
 
 
@@ -1431,7 +1793,14 @@ class Student() {
 
 
 
-//                          TASK 2
+
+
+
+
+
+
+
+
 
 
 
